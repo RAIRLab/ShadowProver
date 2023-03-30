@@ -1,3 +1,5 @@
+#DEADCODE move to examples
+
 from interface import *
 
 assumptions = [

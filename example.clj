@@ -1,3 +1,5 @@
+;DEADCODE this file should be in an examples folder instead of out in root
+
 {:name        "IC1.A "
  :description
  "Learning that knowledge leads to belief with an atomic example.

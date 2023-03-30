@@ -1,3 +1,5 @@
+#DEADCODE move to examples with its partners Example.ipynb and test.py
+
 from py4j.java_gateway import JavaGateway
 
 gateway = None
