@@ -1,20 +1,15 @@
+
+//DEADCODE this class and its methods are never used anywhere in the project
+
 package com.naveensundarg.shadow.prover;
 
 import com.naveensundarg.shadow.prover.core.Prover;
 import com.naveensundarg.shadow.prover.core.SnarkWrapper;
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
 import com.naveensundarg.shadow.prover.utils.Problem;
 import com.naveensundarg.shadow.prover.utils.ProblemReader;
 import com.naveensundarg.shadow.prover.utils.Reader;
-import com.naveensundarg.shadow.prover.utils.Sets;
 
-
-import java.util.*;
-
+import java.util.List;
 
 
 public final class Server {
@@ -30,7 +25,6 @@ public final class Server {
             e.printStackTrace();
             System.exit(-1);
         }
-
     }
 
     public class RequestPayload {
