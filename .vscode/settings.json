@@ -2,12 +2,14 @@
     "editor.rulers": [120],
     "cSpell.words": [
         "biconditional",
+        "bpsm",
         "DCEC",
         "DEADCODE",
         "hyperlog",
         "naveensundarg",
         "rawtypes",
-        "skolemize"
+        "skolemize",
+        "SORTSYSTEM"
     ],
     "java.format.settings.url": " https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
 }

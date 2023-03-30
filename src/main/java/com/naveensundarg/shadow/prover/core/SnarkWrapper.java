@@ -8,7 +8,9 @@ import com.naveensundarg.shadow.prover.representations.value.Variable;
 import com.naveensundarg.shadow.prover.utils.CollectionUtils;
 import com.naveensundarg.shadow.prover.utils.Reader;
 import com.naveensundarg.shadow.prover.utils.Sets;
+
 import org.apache.commons.lang3.tuple.Pair;
+
 import org.armedbear.lisp.Fixnum;
 import org.armedbear.lisp.Interpreter;
 import org.armedbear.lisp.LispObject;

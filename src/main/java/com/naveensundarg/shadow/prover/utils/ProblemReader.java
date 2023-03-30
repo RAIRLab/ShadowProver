@@ -25,8 +25,9 @@ import java.util.stream.Collectors;
 
 import static us.bpsm.edn.parser.Parsers.defaultConfiguration;
 
-/**
- * Created by naveensundarg on 7/23/16.
+/** Static class for converting files to {@link com.naveensundarg.shadow.prover.utils.Problem}
+ * @author naveensundarg 
+ * @date 7/23/16
  */
 public class ProblemReader {
 
@@ -41,27 +42,20 @@ public class ProblemReader {
     private static final Keyword OUTPUT = Keyword.newKeyword("output");
 
     public static List<Problem> readFrom(InputStream inputStream) throws Reader.ParsingException {
-
         Parseable pbr = Parsers.newParseable(new InputStreamReader(inputStream));
         Parser p = Parsers.newParser(defaultConfiguration());
 
-
         List<Problem> problems = CollectionUtils.newEmptyList();
-
         Object problemDesc = p.nextValue(pbr);
 
         while (problemDesc != Parser.END_OF_INPUT) {
-
             problems.add(buildProblem((Map<?, ?>) problemDesc));
             problemDesc = p.nextValue(pbr);
         }
-
         return problems;
-
     }
 
     public static List<Problem> readFrom(String path) throws Reader.ParsingException, FileNotFoundException {
-
         return readFrom( new FileInputStream(path));
     }
 
@@ -87,7 +81,6 @@ public class ProblemReader {
 
 
     private static List<Variable> readVariableList(List<?> lst) throws Reader.ParsingException {
-
         List<Variable> vars = lst.stream().map(x -> {
             try {
                 return (Variable) Reader.readLogicValue(x);
@@ -101,10 +94,7 @@ public class ProblemReader {
             throw new Reader.ParsingException("List has invalid variables: " + lst);
         }
 
-
         return vars;
-
-
     }
 
     private static List<Value> readValueList(List<?> lst) throws Reader.ParsingException {
@@ -121,11 +111,7 @@ public class ProblemReader {
 
             throw new Reader.ParsingException("List has invalid values: " + lst);
         }
-
-
         return vars;
-
-
     }
 
      private static DPLChunk buildChunk(Map<?, ?> map) throws Reader.ParsingException {

@@ -8,52 +8,69 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-/**
- * Created by naveensundarg on 4/13/16.
+
+//DEADCODE everything related to answerVariable and getAnswersExpected is dead code
+//it is used exclusively in AnswerExtractionTests but nothing is really done with them here
+
+/** This class represents a proof search problem
+ * @author naveensundarg
+ * @date 4/13/16
  */
 public class Problem {
 
-
+    //Basic properties of the problem, given assumptions need to reach the goal with a proof.
     private final Set<Formula> assumptions;
-
     private final Formula goal;
-
     private final String name;
     private final String description;
 
-
-
+    //TODO: not clear what these are -James
     private final Optional<List<Variable>> answerVariable;
     private final Optional<Set<List<Value>>> answerExpected;
-    public Problem(String name, String description, Set<Formula> assumptions, Formula goal) {
 
+    /**
+     * Constructs a problem with the goal of finding a proof of the goal from the assumptions
+     * @param name Name of the problem
+     * @param description Description of the problem
+     * @param assumptions The set of assumption formulae
+     * @param goal The goal formulae
+     */
+    public Problem(String name, String description, Set<Formula> assumptions, Formula goal) {
         this.assumptions = assumptions;
         this.goal = goal;
         this.name = name;
         this.description = description;
         answerExpected = Optional.empty();
-
         answerVariable = Optional.empty();
-
     }
 
-        public Problem(String name, String description, Set<Formula> assumptions, Formula goal,
-                       List<Variable> answerVariables, Set<List<Value>> expectedAnswers) {
-
+    // DEADCODE
+    /**
+     * Constructs a problem with the goal of finding a proof of the goal from the assumptions
+     * Additionally takes ???
+     * @param name Name of the problem
+     * @param description Description of the problem
+     * @param assumptions The set of assumption formulae
+     * @param goal The goal formulae
+     * @param answerVariables ???
+     * @param expectedAnswers ???
+     */
+    public Problem(String name, String description, Set<Formula> assumptions, Formula goal,
+                   List<Variable> answerVariables, Set<List<Value>> expectedAnswers) {
         this.assumptions = assumptions;
         this.goal = goal;
         this.name = name;
         this.description = description;
         this.answerExpected = Optional.of(expectedAnswers);
-
         this.answerVariable = Optional.of(answerVariables);
-
     }
 
+    // DEADCODE
     public Optional<List<Variable>> getAnswerVariables() {
         return answerVariable;
     }
 
+    // DEADCODE
     public Optional<Set<List<Value>>> getAnswersExpected() {
         return answerExpected;
     }
@@ -76,14 +93,15 @@ public class Problem {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) 
+            return true;
+        if (o == null || getClass() != o.getClass()) 
+            return false;
 
         Problem problem = (Problem) o;
-
-        if (!assumptions.equals(problem.assumptions)) return false;
+        if (!assumptions.equals(problem.assumptions)) 
+            return false;
         return goal.equals(problem.goal);
-
     }
 
     @Override
