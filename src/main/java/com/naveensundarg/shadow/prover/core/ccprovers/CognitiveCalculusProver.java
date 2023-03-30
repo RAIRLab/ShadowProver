@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
 import static com.naveensundarg.shadow.prover.utils.Sets.cartesianProduct;
 
 
+
 public class CognitiveCalculusProver implements CCProver {
 
     /*
@@ -47,30 +48,33 @@ public class CognitiveCalculusProver implements CCProver {
         reductio = false;
         expanders = CollectionUtils.newEmptyList();
 
-        expanders.add(BreakupBiConditionals.INSTANCE);
-        expanders.add(R4.INSTANCE);
-        expanders.add(SelfBelief.INSTANCE);
-        expanders.add(PerceptionToKnowledge.INSTANCE);
-        expanders.add(SaysToBelief.INSTANCE);
-        expanders.add(IntentionToPerception.INSTANCE);
-        expanders.add(ModalConjunctions.INSTANCE);
-        expanders.add(ModalImplications.INSTANCE);
+        Collections.addAll(expanders,
+            BreakupBiConditionals.INSTANCE,
+            R4.INSTANCE,
+            SelfBelief.INSTANCE,
+            PerceptionToKnowledge.INSTANCE,
+            SaysToBelief.INSTANCE,
+            IntentionToPerception.INSTANCE,
+            ModalConjunctions.INSTANCE,
+            ModalImplications.INSTANCE,
 
-        expanders.add(DR1.INSTANCE);
-        expanders.add(DR2.INSTANCE);
-        expanders.add(DR3.INSTANCE);
-        expanders.add(DR5.INSTANCE);
+            DR1.INSTANCE,
+            DR2.INSTANCE,
+            DR3.INSTANCE,
+            DR5.INSTANCE,
 
-        expanders.add(OughtSchema.INSTANCE);
+            OughtSchema.INSTANCE,
 
-        expanders.add(UniversalElim.INSTANCE);
-        expanders.add(KnowledgeConjunctions.INSTANCE);
+            UniversalElim.INSTANCE,
+            KnowledgeConjunctions.INSTANCE,
 
-        expanders.add(NotExistsToForallNot.INSTANCE);
+            NotExistsToForallNot.INSTANCE,
 
-        expanders.add(NecToPos.INSTANCE);
+            NecToPos.INSTANCE,
 
-        expanders.add(InnerModalForward.INSTANCE);
+            InnerModalForward.INSTANCE
+        );
+
         if (theoremsToNec) {
             expanders.add(TheoremsToNecessity.INSTANCE);
         }
@@ -124,27 +128,35 @@ public class CognitiveCalculusProver implements CCProver {
 
         Optional<Justification> shadowedJustificationOpt = folProver.prove(shadow(base), shadowedGoal);
 
+        // Attempt to prove the statement through propogation of
+        // an agent's theory of mind.
         logger.addContext();
-        // logger.tryAgentClosure(formula);
         Optional<Justification> agentClosureJustificationOpt = this.proveAgentClosure(base, formula);
         logger.removeContext();
+        if (agentClosureJustificationOpt.isPresent()) {
+            return agentClosureJustificationOpt;
+        }
 
-        while (!shadowedJustificationOpt.isPresent() && !agentClosureJustificationOpt.isPresent()) {
+        while (!shadowedJustificationOpt.isPresent()) {
 
+            // Grow the formula base via expanders
             int sizeBeforeExpansion = base.size();
             base = expand(base, added, formula);
             int sizeAfterExpansion = base.size();
 
+            // If we're passed our memory limit, return empty
             if (sizeAfterExpansion > MAX_EXPAND_FACTOR * assumptions.size()) {
                 return Optional.empty();
             }
+
+            // Return if the new assumption base contains the goal
             if (base.contains(formula)) {
                 return Optional.of(TrivialJustification.trivial(base, formula));
             }
 
+            // Try out various strategies...
+
             Optional<Justification> andProofOpt = tryAND(base, formula, added);
-
-
             if (andProofOpt.isPresent()) {
                 return andProofOpt;
             }
@@ -152,166 +164,152 @@ public class CognitiveCalculusProver implements CCProver {
             if (!reductio) {
 
                 Optional<Justification> necProofOpt = tryNEC(base, formula, added);
-
                 if (necProofOpt.isPresent()) {
                     return necProofOpt;
                 }
 
                 Optional<Justification> posProofOpt = tryPOS(base, formula, added);
-
                 if (posProofOpt.isPresent()) {
                     return posProofOpt;
                 }
 
                 Optional<Justification> forAllIntroOpt = tryForAllIntro(base, formula, added);
-
                 if (forAllIntroOpt.isPresent()) {
                     return forAllIntroOpt;
                 }
 
                 Optional<Justification> existsIntroOpt = tryExistsIntro(base, formula, added);
-
                 if (existsIntroOpt.isPresent()) {
                     return existsIntroOpt;
                 }
 
-
                 Optional<Justification> ifIntroOpt = tryIfIntro(base, formula, added);
-
                 if (ifIntroOpt.isPresent()) {
                     return ifIntroOpt;
                 }
 
-
                 Optional<Justification> counterFacIntroOpt = tryCounterFactIntro(base, formula, added);
-
                 if (counterFacIntroOpt.isPresent()) {
                     return counterFacIntroOpt;
                 }
-
-
             }
 
 
             Optional<Justification> caseProofOpt = tryOR(base, formula, added);
-
-
             if (caseProofOpt.isPresent()) {
                 return caseProofOpt;
             }
+
+
             if (base.size() < 50 && !reductio) {
-
                 Optional<Justification> reductioProofOpt = tryReductio(base, formula, added);
-
-
                 if (reductioProofOpt.isPresent()) {
                     return reductioProofOpt;
                 }
             }
 
-
+            // If no new formula were created via expanders, then fail
             if (sizeAfterExpansion <= sizeBeforeExpansion) {
                 return Optional.empty();
             }
 
+            // Attempt shadowing and proving the goal again
             shadowedJustificationOpt = folProver.prove(shadow(base), shadowedGoal);
+            if (shadowedJustificationOpt.isPresent()) {
+                return shadowedJustificationOpt;
+            }
+
+            // Attempt agent closure again
             agentClosureJustificationOpt = proveAgentClosure(base, formula);
+            if (agentClosureJustificationOpt.isPresent()) {
+                return agentClosureJustificationOpt;
+            }
         }
 
-        if (shadowedJustificationOpt.isPresent()) {
-
-            //  logFOLCall(true, shadow(base), shadowedGoal);
-            return shadowedJustificationOpt;
-        }
-        //   logFOLCall(false, shadow(base), shadowedGoal);
-
-        return agentClosureJustificationOpt;
-
+        // Failed to find a proof
+        return Optional.empty();
     }
 
+
+    /**
+     * Try to prove the consequent of an implication from the antecedant and base,
+     * if successful return If Intro justification.
+     * @param base Set of derived formulae 
+     * @param formula Goal to prove
+     * @param added Formulae added via expanders
+     * @return Justification if proof is found else empty.
+     */
     protected Optional<Justification> tryIfIntro(Set<Formula> base, Formula formula, Set<Formula> added) {
-        if (formula instanceof Implication) {
-
-            Implication implication = (Implication) formula;
-
-            Formula antecedent = implication.getAntecedent();
-            Formula consequent = implication.getConsequent();
-
-            logger.addContext();
-            // logger.tryLog("Tying if intro", formula);
-            Optional<Justification> consOpt = this.prove(Sets.add(base, antecedent), consequent);
-            logger.removeContext();
-
-            if (consOpt.isPresent()) {
-
-                return Optional.of(new CompoundJustification("If Intro", CollectionUtils.listOf(consOpt.get())));
-
-            } else {
-
-                return Optional.empty();
-            }
-            //TODO: the reverse
-
-        } else {
-
+        if (!(formula instanceof Implication)) {
             return Optional.empty();
         }
+
+        Implication implication = (Implication) formula;
+
+        Formula antecedent = implication.getAntecedent();
+        Formula consequent = implication.getConsequent();
+
+        logger.addContext();
+        // logger.tryLog("Tying if intro", formula);
+        Optional<Justification> consOpt = this.prove(Sets.add(base, antecedent), consequent);
+        logger.removeContext();
+
+        if (consOpt.isPresent()) {
+            return Optional.of(new CompoundJustification(
+                "If Intro",
+                CollectionUtils.listOf(consOpt.get())
+            ));
+        } 
+        
+        return Optional.empty();
     }
 
     protected Optional<Justification> tryCounterFactIntro(Set<Formula> base, Formula formula, Set<Formula> added) {
-        if (formula instanceof CounterFactual) {
+        if (! (formula instanceof CounterFactual)) {
+            return Optional.empty();
+        }
 
-            CounterFactual counterFactual = (CounterFactual) formula;
+        CounterFactual counterFactual = (CounterFactual) formula;
 
-            Formula antecedent = counterFactual.getAntecedent();
-            Formula consequent = counterFactual.getConsequent();
+        Formula antecedent = counterFactual.getAntecedent();
+        Formula consequent = counterFactual.getConsequent();
 
-            logger.addContext();
-            // logger.tryLog("Tying counterfactual intro", formula);
-            Optional<Justification> counterfactualIntroOpt = (new ConsistentSubsetFinder()).find(this, base, antecedent, consequent);
-            logger.removeContext();
+        logger.addContext();
+        // logger.tryLog("Tying counterfactual intro", formula);
+        Optional<Justification> counterfactualIntroOpt = (new ConsistentSubsetFinder()).find(this, base, antecedent, consequent);
+        logger.removeContext();
 
-            if (counterfactualIntroOpt.isPresent()) {
-
-                return Optional.of(new CompoundJustification("Counterfactual Intro", CollectionUtils.listOf(counterfactualIntroOpt.get())));
-
-            } else {
-
-                return Optional.empty();
-            }
-            //TODO: the reverse
-
+        if (counterfactualIntroOpt.isPresent()) {
+            return Optional.of(new CompoundJustification(
+                "Counterfactual Intro",
+                CollectionUtils.listOf(counterfactualIntroOpt.get())
+            ));
         } else {
-
             return Optional.empty();
         }
     }
 
     protected Optional<Justification> tryExistsIntro(Set<Formula> base, Formula formula, Set<Formula> added) {
-        if (formula instanceof Existential) {
-
-            Existential existential = (Existential) formula;
-            Variable[]  vars        = existential.vars();
-
-            if (vars.length == 1) {
-
-                Map<Variable, Value> subs = CollectionUtils.newMap();
-                subs.put(vars[0], Constant.newConstant());
-
-                // logger.tryLog("Trying to prove existential", formula);
-                return this.prove(base, ((Existential) formula).getArgument().apply(subs));
-
-            } else {
-
-                return Optional.empty();
-                //TODO: Handle more than one variable
-            }
-
-
-        } else {
-
+        if (! (formula instanceof Existential)) {
             return Optional.empty();
         }
+
+        Existential existential = (Existential) formula;
+        Variable[]  vars        = existential.vars();
+
+        if (vars.length != 1) {
+            return Optional.empty();
+            // Question: Is it possible to instantiate new constants for
+            // each variable?
+        }
+
+        // Create a new constant that replaces the bound variable
+        Map<Variable, Value> subs = CollectionUtils.newMap();
+        subs.put(vars[0], Constant.newConstant());
+
+        // logger.tryLog("Trying to prove existential", formula);
+        // Perform a substitution on the bound variable using the new substition mapping
+        return this.prove(base, ((Existential) formula).getArgument().apply(subs));
     }
 
     protected Optional<Justification> tryForAllIntro(Set<Formula> base, Formula formula, Set<Formula> added) {
@@ -502,37 +500,20 @@ public class CognitiveCalculusProver implements CCProver {
                Optional.empty();
     }
 
+    /** Attempt to prove the goal from an agent's theory of mind. 
+     * @param base Set of formulas that represent the background theory.
+     * @param goal Statement to prove
+     * @return Justification if proof is found, otherwise empty.
+    */
     Optional<Justification> proveAgentClosure(Set<Formula> base, Formula goal) {
-
-       if(goal instanceof UnaryModalFormula) {
-           return snapShotGoalProveInternal(base, (UnaryModalFormula) goal);
-       }
-
-        return Optional.empty();
-
-    }
-
-    private void expandInner(Prover prover, Set<Formula> base, Set<Formula> added, Formula goal) {
-
-        if(goal instanceof UnaryModalFormula) {
-            UnaryModalFormula formula = (UnaryModalFormula) goal;
-            Value agent         = formula.getAgent();
-            Value    time          = formula.getTime();
-            Formula  innerGoalFormula = formula.getFormula();
-
-            AgentSnapShot agentSnapShot = AgentSnapShot.from(base);
-
-            Set<Formula> innerGivens = agentSnapShot.allBelievedByAgentTillTime(agent, time);
-
-
-
+        // Return empty if not a theory of mind formula
+        if (! (goal instanceof UnaryModalFormula)) {
+            return Optional.empty();
         }
-    }
 
-    private Optional<Justification> snapShotGoalProveInternal(Set<Formula> base, UnaryModalFormula formula) {
-
-        Value agent         = formula.getAgent();
-        Value    time          = formula.getTime();
+        UnaryModalFormula formula = (UnaryModalFormula) goal;
+        Value    agent            = formula.getAgent();
+        Value    time             = formula.getTime();
         Formula  innerGoalFormula = formula.getFormula();
 
         AgentSnapShot agentSnapShot = AgentSnapShot.from(base);
@@ -540,7 +521,8 @@ public class CognitiveCalculusProver implements CCProver {
         Set<Formula> innerGivens = Sets.newSet();
 
 
-
+        // Gather formula from base based on modal formula
+        // from time 0 to time.
 
         if(formula instanceof Knowledge){
             innerGivens = agentSnapShot.allKnownByAgentTillTime(agent, time);
@@ -554,17 +536,23 @@ public class CognitiveCalculusProver implements CCProver {
             innerGivens = agentSnapShot.allIntendedByAgentTillTime(agent, time);
         }
 
-
-
-
+        // Attempt to prove the goal from the gathered formulae
         CognitiveCalculusProver cognitiveCalculusProver = new CognitiveCalculusProver(this);
         Optional<Justification> inner                   = cognitiveCalculusProver.prove(innerGivens, innerGoalFormula);
 
+        return inner.map(justification -> new CompoundJustification(
+            formula.getClass().toString(),
+            CollectionUtils.listOf(justification))
+        );
 
-
-        return inner.map(justification -> new CompoundJustification(formula.getClass().toString(), CollectionUtils.listOf(justification)));
     }
 
+    /** Create more facts using expanders 
+     * @param base Set of formulas that represent the background theory.
+     * @param added Keeps track which formulae gets added via expanders
+     * @param goal Statement to prove.
+     * @return New formula base
+    */
     public Set<Formula> expand(Set<Formula> base, Set<Formula> added, Formula goal) {
 
         expanders.forEach(expander -> expander.expand(this, base, added, goal));
@@ -576,7 +564,10 @@ public class CognitiveCalculusProver implements CCProver {
         return base;
     }
 
-
+    /** Takes a set of formulas and shadows them to level 1
+     * @param formulas Set of formulas to shadow
+     * @return Set of shadowed formula
+     */
     protected Set<Formula> shadow(Set<Formula> formulas) {
         return formulas.stream().map(f -> f.shadow(1)).collect(Collectors.toSet());
     }
