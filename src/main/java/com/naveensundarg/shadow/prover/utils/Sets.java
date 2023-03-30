@@ -47,6 +47,7 @@ public class Sets {
         return newSet;
     }
 
+    @SafeVarargs
     public static <T> Set<T> from(T... t){
 
         Set<T> newSet = newSet();
@@ -74,6 +75,7 @@ public class Sets {
         return newSet;
     }
 
+    @SafeVarargs
     public static <T> Set<T> unionOf(Set<T> ... Xs ){
 
         Set<T> newSet = newSet();

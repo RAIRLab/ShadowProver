@@ -29,6 +29,10 @@
 
         <!-- If I have to keep waiting for tests I am going to lose it -James -->
         <maven.test.skip>true</maven.test.skip>
+
+        <!-- Set the encoding so builds aren't platform dependent -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     

@@ -24,6 +24,7 @@ public class CollectionUtils {
         return list;
     }
 
+    @SafeVarargs
     public static <T> List<T> listOf(T... A){
         List<T> list = newEmptyList();
         for (T a:A){
