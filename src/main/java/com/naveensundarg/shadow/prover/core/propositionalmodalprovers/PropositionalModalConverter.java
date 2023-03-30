@@ -22,17 +22,17 @@ public class PropositionalModalConverter {
 
     static {
 
-        Parseable parseable = Parsers.newParseable("?WORLD");
+        Parseable Parseable = Parsers.newParseable("?WORLD");
         Parser p = Parsers.newParser(Parsers.defaultConfiguration());
 
 
 
 
         try {
-            WORLD = (Variable) Reader.readLogicValue(p.nextValue(parseable));
-            parseable = Parsers.newParseable("W");
+            WORLD = (Variable) Reader.readLogicValue(p.nextValue(Parseable));
+            Parseable = Parsers.newParseable("W");
 
-            W =  (Constant) Reader.readLogicValue(p.nextValue(parseable));
+            W =  (Constant) Reader.readLogicValue(p.nextValue(Parseable));
 
         } catch (Reader.ParsingException e) {
             e.printStackTrace();

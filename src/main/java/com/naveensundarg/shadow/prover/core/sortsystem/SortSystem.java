@@ -1,6 +1,5 @@
 package com.naveensundarg.shadow.prover.core.sortsystem;
 
-
 import com.naveensundarg.shadow.prover.representations.value.Value;
 import com.naveensundarg.shadow.prover.utils.CollectionUtils;
 import us.bpsm.edn.Keyword;

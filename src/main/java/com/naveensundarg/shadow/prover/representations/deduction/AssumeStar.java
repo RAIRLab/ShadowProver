@@ -12,7 +12,6 @@ public final class AssumeStar extends Deduction {
     private final List<Phrase> assumptions;
     private final Deduction deduction;
     public AssumeStar(List<Phrase> assumptions, Deduction deduction){
-
         this.assumptions = assumptions;
         this.deduction = deduction;
     }

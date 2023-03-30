@@ -160,11 +160,11 @@ public class Reader {
 
     public static Value readLogicValueFromString(String input) throws ParsingException {
 
-        Parseable parseable = Parsers.newParseable(input);
+        Parseable Parseable = Parsers.newParseable(input);
         Parser parser = Parsers.newParser(defaultConfiguration());
 
 
-        return readLogicValue(parser.nextValue(parseable), Sets.newSet());
+        return readLogicValue(parser.nextValue(Parseable), Sets.newSet());
     }
 
     public static Value readLogicValue(Object input) throws ParsingException {
@@ -222,20 +222,20 @@ public class Reader {
 
     public static Formula readFormulaFromString(String input) throws ParsingException {
 
-        Parseable parseable = Parsers.newParseable(preprocess(input));
+        Parseable Parseable = Parsers.newParseable(preprocess(input));
         Parser p = Parsers.newParser(defaultConfiguration());
 
 
-        return readFormula(p.nextValue(parseable));
+        return readFormula(p.nextValue(Parseable));
 
     }
 
     public static Phrase readPhraseFromString(String input) throws ParsingException {
 
-        Parseable parseable = Parsers.newParseable(preprocess(input));
+        Parseable Parseable = Parsers.newParseable(preprocess(input));
         Parser p = Parsers.newParser(defaultConfiguration());
 
-        return readPhrase(p.nextValue(parseable));
+        return readPhrase(p.nextValue(Parseable));
 
     }
 
@@ -1273,10 +1273,10 @@ public class Reader {
 
     public static Object readFromString(String s) {
 
-        Parseable parseable = Parsers.newParseable(preprocess(s));
+        Parseable Parseable = Parsers.newParseable(preprocess(s));
         Parser parser = Parsers.newParser(defaultConfiguration());
 
-        return parser.nextValue(parseable);
+        return parser.nextValue(Parseable);
     }
 
 

@@ -12,30 +12,23 @@ import java.util.Set;
 
 public class DPLChunk  {
 
-    private final Set<Formula> assumptions;
-
+    private final Set<Formula> assumptions; 
     private final Phrase goal;
-
     private final String name;
     private final String description;
-
     private final Phrase input;
-
-
     private final Optional<List<Variable>> answerVariable;
     private final Optional<Set<List<Value>>> answerExpected;
-    public DPLChunk(String name, String description, Set<Formula> assumptions, Phrase input, Phrase goal) {
 
+
+    public DPLChunk(String name, String description, Set<Formula> assumptions, Phrase input, Phrase goal) {
         this.assumptions = assumptions;
         this.goal = goal;
         this.name = name;
         this.description = description;
         this.input = input;
-
         answerExpected = Optional.empty();
-
         answerVariable = Optional.empty();
-
     }
 
         public DPLChunk(String name, String description, Set<Formula> assumptions, Phrase input, Formula goal,
