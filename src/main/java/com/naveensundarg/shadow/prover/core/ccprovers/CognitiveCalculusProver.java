@@ -125,7 +125,7 @@ public class CognitiveCalculusProver implements CCProver {
         Optional<Justification> shadowedJustificationOpt = folProver.prove(shadow(base), shadowedGoal);
 
         logger.addContext();
-        logger.tryAgentClosure(formula);
+        // logger.tryAgentClosure(formula);
         Optional<Justification> agentClosureJustificationOpt = this.proveAgentClosure(base, formula);
         logger.removeContext();
 
@@ -238,7 +238,7 @@ public class CognitiveCalculusProver implements CCProver {
             Formula consequent = implication.getConsequent();
 
             logger.addContext();
-            logger.tryLog("Tying if intro", formula);
+            // logger.tryLog("Tying if intro", formula);
             Optional<Justification> consOpt = this.prove(Sets.add(base, antecedent), consequent);
             logger.removeContext();
 
@@ -267,7 +267,7 @@ public class CognitiveCalculusProver implements CCProver {
             Formula consequent = counterFactual.getConsequent();
 
             logger.addContext();
-            logger.tryLog("Tying counterfactual intro", formula);
+            // logger.tryLog("Tying counterfactual intro", formula);
             Optional<Justification> counterfactualIntroOpt = (new ConsistentSubsetFinder()).find(this, base, antecedent, consequent);
             logger.removeContext();
 
@@ -298,7 +298,7 @@ public class CognitiveCalculusProver implements CCProver {
                 Map<Variable, Value> subs = CollectionUtils.newMap();
                 subs.put(vars[0], Constant.newConstant());
 
-                logger.tryLog("Trying to prove existential", formula);
+                // logger.tryLog("Trying to prove existential", formula);
                 return this.prove(base, ((Existential) formula).getArgument().apply(subs));
 
             } else {
@@ -320,7 +320,7 @@ public class CognitiveCalculusProver implements CCProver {
             Universal  universal = (Universal) formula;
             Variable[] vars      = universal.vars();
 
-            logger.tryLog("Trying to prove universal", universal);
+            // logger.tryLog("Trying to prove universal", universal);
             if (vars.length == 1) {
 
                 Map<Variable, Value> subs = CollectionUtils.newMap();
@@ -354,7 +354,7 @@ public class CognitiveCalculusProver implements CCProver {
 
                 Map<Variable, Value> subs = CollectionUtils.newMap();
                 subs.put(vars[0], Constant.newConstant());
-                logger.tryLog("Trying to prove ", (new Not(kernel)).apply(subs));
+                // logger.tryLog("Trying to prove ", (new Not(kernel)).apply(subs));
 
                 return this.prove(base, (new Not(kernel)).apply(subs));
 
@@ -372,7 +372,7 @@ public class CognitiveCalculusProver implements CCProver {
     protected Optional<Justification> tryNEC(Set<Formula> base, Formula formula, Set<Formula> added) {
         if (formula instanceof Necessity) {
 
-            logger.tryLog("Trying to prove necessity", formula);
+            // logger.tryLog("Trying to prove necessity", formula);
             Optional<Justification> innerProof = this.prove(Sets.newSet(), ((Necessity) formula).getFormula());
 
             if (innerProof.isPresent()) {
@@ -394,7 +394,7 @@ public class CognitiveCalculusProver implements CCProver {
 
             Formula core = ((Possibility) ((Not) formula).getArgument()).getFormula();
 
-            logger.tryLog("Trying to prove necessity", new Necessity(new Not(core)));
+            // logger.tryLog("Trying to prove necessity", new Necessity(new Not(core)));
 
             Optional<Justification> innerProof = this.prove(Sets.newSet(), new Necessity(new Not(core)));
 
@@ -417,7 +417,7 @@ public class CognitiveCalculusProver implements CCProver {
         if (formula instanceof And) {
 
             And and = (And) formula;
-            logger.tryLog("Trying to prove conjunction", and);
+            // logger.tryLog("Trying to prove conjunction", and);
 
 
             Formula conjuncts[] = and.getArguments();
@@ -487,7 +487,7 @@ public class CognitiveCalculusProver implements CCProver {
 
         Atom atom = Atom.generate();
 
-        logger.tryLog("Reductio on", negated);
+        // logger.tryLog("Reductio on", negated);
 
 
         Set<Formula> augmented = CollectionUtils.setFrom(base);
