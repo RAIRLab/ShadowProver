@@ -12,8 +12,12 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
+/** The class containing the main method and the primary entrypoint of the ShadowProver application */
 public final class Runner {
 
+    /** The entrypoint to ShadowProver 
+     * @param args an array containing a single string with the path to the problem file
+    */
     public static void main(String[] args) {
 
         System.out.println("--------------- Starting ShadowProver --------------- ");
@@ -29,11 +33,12 @@ public final class Runner {
         FileInputStream fileStream;
         try {
             fileStream = new FileInputStream(fileName);
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e){
             e.printStackTrace();
             return;
         }
-
+        
+        // Files can contain multiple problems, extract all of them
         List<Problem> problems;
         try {
             problems = ProblemReader.readFrom(fileStream);
@@ -43,7 +48,8 @@ public final class Runner {
         }
 
         CognitiveCalculusProver cognitiveCalculusProver = new CognitiveCalculusProver();
-
+        
+        //Find a proof for each problem using cognitiveCalculusProver else fail
         for (Problem problem : problems) {
             Optional<Justification> optionalJustification = cognitiveCalculusProver.prove(
                 problem.getAssumptions(),
@@ -52,8 +58,7 @@ public final class Runner {
 
             if(optionalJustification.isPresent()) {
                 System.out.println(optionalJustification.get().toString());
-            }
-            else {
+            } else {
                 System.out.println("FAILED");
             }
         }

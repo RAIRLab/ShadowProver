@@ -20,38 +20,29 @@ import java.util.Set;
 public interface Prover {
 
     default Optional<Integer> proofLength(Set<Formula> assumptions, Formula formula){
-
         throw new NotImplementedException("Proof length not implemented in: " + this.getClass());
-
     }
 
     Optional<Justification> prove(Set<Formula> assumptions, Formula formula);
 
 
     default Optional<Justification> prove(SortSystem sortSystem, Set<Formula> assumptions, Formula formula){
-
         throw new NotImplementedException("Sorted proof system not implemented in: " + this.getClass());
-
     }
 
     default Optional<Value> proveAndGetBinding(Set<Formula> assumptions, Formula formula, Variable variable){
-
         return Optional.empty();
     }
 
     default Optional<Map<Variable, Value>> proveAndGetBindings(Set<Formula> assumptions, Formula formula, List<Variable> variable){
-
         return Optional.empty();
     }
 
     default Optional<Pair<Justification, Set<Map<Variable, Value>>>> proveAndGetMultipleBindings(Set<Formula> assumptions, Formula formula, List<Variable> variable){
-
         return Optional.empty();
     }
 
     default Logger getLogger(){
-
         throw new NotImplementedException("No logger set.");
     }
-
 }
