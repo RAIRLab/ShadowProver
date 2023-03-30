@@ -3,18 +3,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <groupId>com.naveensundarg</groupId>
     <artifactId>prover</artifactId>
     <version>1.40</version>
     <packaging>jar</packaging>
 
-
-
     <name> Shadow Prover</name>
-    <description> A prover for logics more expressive than first-order logic building (quantified modal logic, second-order logic etc).</description>
+    <description> 
+        A prover for logics more expressive than first-order logic building
+        (quantified modal logic, second-order logic etc).
+    </description>
     <url>https://github.com/naveensundarg/prover</url>
-
 
     <licenses>
         <license>
@@ -23,14 +22,13 @@
         </license>
     </licenses>
 
-    <scm>
+    <!-- DEADCODE scm is not being used and this version hasn't been used -->
+    <!--<scm>
         <connection>scm:git:https://github.com/naveensundarg/prover.git</connection>
         <developerConnection>scm:git:https://github.com/naveensundarg/prover.git</developerConnection>
-
         <url>https://github.com/naveensundarg/prover</url>
-      <tag>prover-1.03</tag>
-  </scm>
-
+        <tag>prover-1.03</tag>
+    </scm>-->
 
     <build>
         <plugins>
@@ -38,7 +36,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.4</version>
+
+                <!-- Aditional Executable Jars with real manifests that we're building -->
                 <executions>
+                    <!-- DEADCODE maybe, sandbox does not appear to differ in anyway from server -->
                     <execution>
                         <id>sandbox</id>
                         <configuration>
@@ -57,6 +58,8 @@
                             <goal>single</goal>
                         </goals>
                     </execution>
+
+                    <!-- The Py4j server executable -->
                     <execution>
                         <id>server</id>
                         <configuration>
@@ -82,40 +85,40 @@
     </build>
 
     <dependencies>
-
+        <!-- The Lisp interprter that is used to run snark -->
         <dependency>
             <groupId>org.armedbear.lisp</groupId>
             <artifactId>abcl</artifactId>
             <version>1.0.1</version>
         </dependency>
 
+        <!-- Deadcode, used to visualize graphs we don't have -->
+        <!-- https://github.com/nidi3/graphviz-java -->
         <!-- https://mvnrepository.com/artifact/guru.nidi/graphviz-java -->
-        <dependency>
+        <!-- <dependency>
             <groupId>guru.nidi</groupId>
             <artifactId>graphviz-java</artifactId>
             <version>0.0.2</version>
-        </dependency>
+        </dependency> -->
 
-
+        <!-- DEADCODE Json Parsers, unused by current codebase -->
+        <!--
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20160212</version>
-        </dependency>
+        </dependency>-->
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.5</version>
-            <scope>test</scope>
-        </dependency>
-
+        <!-- Parses "extensible data notation" a subset of the clojure syntax -->
+        <!-- Appears to be made use of extensibly for parsing shadowprover problems -->
+        <!--https://github.com/bpsm/edn-java-->
         <dependency>
             <groupId>us.bpsm</groupId>
             <artifactId>edn-java</artifactId>
             <version>0.4.6</version>
         </dependency>
 
+        <!-- Java extensions (Kind of like boost for Java) https://commons.apache.org/proper/commons-lang/ -->
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -123,26 +126,30 @@
             <version>3.4</version>
         </dependency>
 
-
-
+        <!-- For colored printing, apparently not cross platform -->
         <!-- https://mvnrepository.com/artifact/com.diogonunes/JCDP -->
         <dependency>
             <groupId>com.diogonunes</groupId>
             <artifactId>JCDP</artifactId>
             <version>2.0.3.1</version>
         </dependency>
+
+        <!-- Clojure Programming Language support for problem
+            representations and hyperlog-->
         <dependency>
             <groupId>org.clojure</groupId>
             <artifactId>clojure</artifactId>
             <version>1.10.0</version>
         </dependency>
 
-        <dependency>
+        <!-- DEADCODE does not appear to be used by any files -->
+        <!--<dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.9</version>
-        </dependency>
+        </dependency>-->
 
+        <!-- Used for the python interface-->
         <!-- https://mvnrepository.com/artifact/net.sf.py4j/py4j -->
         <dependency>
             <groupId>net.sf.py4j</groupId>
@@ -150,28 +157,37 @@
             <version>0.8.1</version>
         </dependency>
 
+        <!-- Used for unit testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.2</version>
         </dependency>
 
+        <!-- yet another testing framework because why not -->
+        <!-- https://testng.org/doc/ -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.5</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
-    <distributionManagement>
+    <!-- DEADCODE we're not deploying here, git is fine -->
+    <!-- <distributionManagement>
         <repository>
             <id>bintray-naveensundarg-main</id>
             <name>naveensundarg-main</name>
             <url>https://api.bintray.com/maven/naveensundarg/main/prover/;publish=1</url>
         </repository>
-    </distributionManagement>
+    </distributionManagement> -->
 
-
+    <!-- This tells maven to build with Java 8 for Java 8-->
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
 
 </project>
