@@ -65,14 +65,14 @@ public class SnarkWrapper implements Prover {
         if (local.get()) {
 
             interpreter = Interpreter.createInstance();
-            LispObject result = interpreter.eval("(load \"snark-20120808r02/snark-system.lisp\")");
+            LispObject result = interpreter.eval("(load \"snark/snark-system.lisp\")");
 
 
             result = interpreter.eval("(make-snark-system)");
 
 
-            result = interpreter.eval("(load \"snark-20120808r02/snark-interface.lisp\")");
-            result = interpreter.eval("(load \"snark-20120808r02/commons.lisp\")");
+            result = interpreter.eval("(load \"snark/snark-interface.lisp\")");
+            result = interpreter.eval("(load \"snark/commons.lisp\")");
 
 
         } else {
