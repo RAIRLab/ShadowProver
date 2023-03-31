@@ -9,9 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by naveensundarg on 4/11/16.
  */
-public class Constant extends Value implements Comparable{
-
-
+public class Constant extends Value {
 
     private final Value[] arguments;
     private final Set<Variable> variables;
@@ -25,28 +23,29 @@ public class Constant extends Value implements Comparable{
         this.variables = Sets.newSet();
         this.subValues = Sets.with(this);
     }
+    
     @Override
-    public  int arity() {
+    public int arity() {
         return 0;
     }
 
     @Override
-    public  Value[] getArguments() {
+    public Value[] getArguments() {
         return arguments;
     }
 
     @Override
-    public  boolean isVariable() {
+    public boolean isVariable() {
         return false;
     }
 
     @Override
-    public  boolean isConstant() {
+    public boolean isConstant() {
         return true;
     }
 
     @Override
-    public  boolean isCompound() {
+    public boolean isCompound() {
         return false;
     }
 
@@ -66,17 +65,16 @@ public class Constant extends Value implements Comparable{
     }
 
     @Override
-    public  Value generalize(Map<Value, Variable> substitution) {
+    public Value generalize(Map<Value, Variable> substitution) {
          if(substitution.containsKey(this)){
 
             return substitution.get(this);
-        }
-        else {
+        } else {
 
              return this;
-         }
-
+        }
     }
+
     @Override
     public Set<Value> subValues() {
         return subValues;
@@ -96,9 +94,7 @@ public class Constant extends Value implements Comparable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Constant constant = (Constant) o;
-
         return name.equals(constant.getName());
 
     }
@@ -119,21 +115,15 @@ public class Constant extends Value implements Comparable{
     public int compareTo(Object o) {
         if(!(o instanceof  Constant)) {
             return 0;
-        }
-        else {
-            Constant other = (Constant) o;
-
+        } else {
+            //Constant other = (Constant) o; //DEADCODE
             return this.name.compareTo(((Constant) o).name);
-
         }
     }
 
     private static AtomicInteger counter = new AtomicInteger(0);
+
     public synchronized static Constant newConstant(){
-
         return new Constant("newC_" + counter.incrementAndGet());
-
-
-
     }
 }

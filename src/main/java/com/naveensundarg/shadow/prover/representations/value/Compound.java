@@ -6,7 +6,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 import java.util.*;
 
 /**
- * Created by naveensundarg on 4/11/16.
+ * @author naveensundarg 
+ * @date 4/11/16
  */
 public class Compound extends Value {
 
@@ -14,7 +15,6 @@ public class Compound extends Value {
     private final Set<Variable> variables;
     private final Set<Value> subValues;
     private final int weight;
-
 
     public Compound(String name, List<Value> argumentsList){
         super();

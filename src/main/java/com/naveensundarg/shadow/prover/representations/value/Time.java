@@ -3,12 +3,12 @@ package com.naveensundarg.shadow.prover.representations.value;
 /**
  * Created by naveensundarg on 11/24/16.
  */
-public class Time extends Constant implements Comparable {
+public class Time extends Constant {
 
-    int value;
+    private int value;
+
     public Time(String name) {
         super(name);
-
         this.value = Integer.parseInt(name);
     }
 
@@ -17,7 +17,6 @@ public class Time extends Constant implements Comparable {
         if(o instanceof Time) {
             Time otherTime = (Time) o;
             return value - otherTime.value;
-
         } else {
             return 0;
         }
