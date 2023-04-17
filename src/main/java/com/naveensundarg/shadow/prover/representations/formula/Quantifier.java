@@ -3,6 +3,9 @@ package com.naveensundarg.shadow.prover.representations.formula;
 import com.naveensundarg.shadow.prover.representations.value.Variable;
 
 import java.util.Map;
+import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by naveensundarg on 4/13/16.
@@ -11,7 +14,9 @@ public interface Quantifier {
 
     Variable[] vars();
 
-    Formula getArgument();
+    public abstract Formula getArgument();
+
+    public abstract Set<Variable> variablesPresent(); 
 
 
     default Formula renamed(Map<Variable, Variable> variableMap){
@@ -38,6 +43,9 @@ public interface Quantifier {
 
     }
 
+    default List<Formula> getArgs() {
+        return Arrays.asList(getArgument());
+    }
 
 
 }

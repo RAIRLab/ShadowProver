@@ -163,5 +163,7 @@ public final class GeneralModal extends  BaseFormula{
         return boundVariables;
     }
 
-
+    public List<Formula> getArgs() {
+        return formulae;
+    }
 }

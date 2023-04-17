@@ -149,4 +149,8 @@ public class Schema extends Formula {
     public Formula replaceSubFormula(Formula oldFormula, Formula newFormula) {
         return new Universal(vars, argument.replaceSubFormula(oldFormula, newFormula));
     }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(argument);
+    }
 }

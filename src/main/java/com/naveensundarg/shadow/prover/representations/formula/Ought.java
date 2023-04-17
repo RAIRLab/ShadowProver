@@ -8,6 +8,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.UnaryOperator;
 
 /**
@@ -195,5 +197,9 @@ public class Ought extends BaseFormula{
     @Override
     public String getName() {
         return "Ought";
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(precondition, ought);
     }
 }

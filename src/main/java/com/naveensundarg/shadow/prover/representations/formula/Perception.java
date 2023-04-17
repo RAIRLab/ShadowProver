@@ -8,6 +8,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.UnaryOperator;
 
 /**
@@ -162,5 +164,9 @@ public class Perception extends BaseFormula implements UnaryModalFormula{
     @Override
     public String getName() {
         return "Perception";
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(formula);
     }
 }

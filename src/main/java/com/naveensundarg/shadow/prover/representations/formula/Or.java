@@ -168,4 +168,8 @@ public class Or extends Formula {
     public Set<Value> valuesPresent() {
         return values;
     }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(arguments);
+    }
 }

@@ -7,6 +7,7 @@ import com.naveensundarg.shadow.prover.utils.CollectionUtils;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
@@ -124,5 +125,9 @@ public class Not extends Formula {
     @Override
     public Set<Value> valuesPresent() {
         return argument.valuesPresent();
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(argument);
     }
 }

@@ -197,4 +197,8 @@ public class Trait extends  BaseFormula{
     public Set<Value> valuesPresent() {
         return values;
     }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(triggeringCondition);
+    }
 }

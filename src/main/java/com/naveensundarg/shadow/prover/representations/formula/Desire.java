@@ -8,6 +8,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
+import java.util.Arrays;
 import java.util.function.UnaryOperator;
 
 /**
@@ -180,5 +182,9 @@ public class Desire extends BaseFormula{
     @Override
     public Set<Value> valuesPresent() {
         return values;
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(formula);
     }
 }

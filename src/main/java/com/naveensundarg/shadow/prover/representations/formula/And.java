@@ -171,6 +171,8 @@ public final class And extends Formula {
         return boundVariables;
     }
 
-
+    public List<Formula> getArgs() {
+        return Arrays.asList(arguments);
+    }
 
 }

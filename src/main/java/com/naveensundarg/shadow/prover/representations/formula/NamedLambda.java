@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
@@ -156,5 +157,9 @@ public  class NamedLambda extends Formula implements Quantifier{
     @Override
     public Formula replaceSubFormula(Formula oldFormula, Formula newFormula) {
         return new NamedLambda(name, isRelation, vars, argument.replaceSubFormula(oldFormula, newFormula));
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(argument);
     }
 }

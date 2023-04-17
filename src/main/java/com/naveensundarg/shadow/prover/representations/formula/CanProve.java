@@ -8,6 +8,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.UnaryOperator;
 
 /**
@@ -151,5 +153,9 @@ public final class CanProve extends  BaseFormula{
     @Override
     public Set<Variable> boundVariablesPresent() {
         return boundVariables;
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(formula);
     }
 }

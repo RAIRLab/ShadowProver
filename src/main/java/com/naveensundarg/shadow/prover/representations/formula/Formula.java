@@ -13,6 +13,7 @@ import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
@@ -145,6 +146,7 @@ public abstract class Formula extends Expression implements Cloneable{
 
     //Abstract methods =================================================================================================
 
+    public abstract List<Formula> getArgs();
     public abstract Set<Formula> subFormulae();
     public abstract Set<Variable> variablesPresent();
     public abstract Formula apply(Map<Variable, Value> substitution);

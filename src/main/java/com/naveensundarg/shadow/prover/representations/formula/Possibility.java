@@ -8,6 +8,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.UnaryOperator;
 
 /**
@@ -142,5 +144,9 @@ public class Possibility extends  BaseFormula{
     @Override
     public int hashCode() {
         return safeHashCode(formula);
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(formula);
     }
 }

@@ -6,6 +6,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
+import java.util.Arrays;
 import java.util.function.UnaryOperator;
 
 /**
@@ -141,5 +143,9 @@ public final class BiConditional extends Formula {
     @Override
     public Set<Variable> boundVariablesPresent() {
         return boundVariables;
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(left, right);
     }
 }

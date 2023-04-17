@@ -4,8 +4,10 @@ import com.naveensundarg.shadow.prover.representations.value.Value;
 import com.naveensundarg.shadow.prover.representations.value.Variable;
 import com.naveensundarg.shadow.prover.utils.Sets;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
 import java.util.function.UnaryOperator;
 
 /**
@@ -122,5 +124,9 @@ public class FormulaVariable extends Formula {
     @Override
     public int hashCode() {
         return safeHashCode(name);
+    }
+
+    public List<Formula> getArgs() {
+        return Collections.emptyList();
     }
 }

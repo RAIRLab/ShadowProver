@@ -9,6 +9,8 @@ import com.naveensundarg.shadow.prover.utils.Sets;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.List;
+import java.util.Arrays;
 import java.util.function.UnaryOperator;
 
 public class Exemplar extends BaseFormula {
@@ -161,5 +163,9 @@ public class Exemplar extends BaseFormula {
     @Override
     public String getName() {
         return "Exemplar";
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(input, output);
     }
 }

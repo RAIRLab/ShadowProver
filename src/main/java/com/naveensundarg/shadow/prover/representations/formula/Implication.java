@@ -7,6 +7,8 @@ import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
+import java.util.Arrays;
 import java.util.function.UnaryOperator;
 
 /**
@@ -139,5 +141,9 @@ public class Implication extends Formula{
     @Override
     public Set<Value> valuesPresent() {
         return values;
+    }
+
+    public List<Formula> getArgs() {
+        return Arrays.asList(antecedent, consequent);
     }
 }
