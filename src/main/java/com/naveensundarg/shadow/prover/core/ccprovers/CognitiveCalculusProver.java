@@ -17,6 +17,9 @@ import com.naveensundarg.shadow.prover.representations.value.Value;
 import com.naveensundarg.shadow.prover.representations.value.Variable;
 import com.naveensundarg.shadow.prover.utils.*;
 
+import org.apache.commons.lang3.tuple.Pair;
+import org.hamcrest.core.IsInstanceOf;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -689,4 +692,185 @@ public class CognitiveCalculusProver implements CCProver {
         return prohibited;
     }
 
+    /**
+     * Find a quantifier by its bound variable within a formula.
+     * Note: Only returns the first instance found as two quantifiers
+     * shouldn't share the same bound variable.
+     * @param v variable to search for
+     * @param f Formula to search for v within
+     * @return a subformula representing the quantifier that
+     * is bound over the specified variable if it exists.
+     */
+    private static Optional<Quantifier> findQuantifier(Variable v, Formula f)  {
+        // Base Cases:
+
+        // Bottom of Formula graph does not contain the bound variable
+        if (f instanceof Predicate || f instanceof Atom) {
+            return Optional.empty();
+        }
+
+        // Check if these quantifiers contain our bound varialbe
+        if (f instanceof Quantifier) {
+            Quantifier qf = (Quantifier) f;
+            if (qf.variablesPresent().contains(v)) {
+                return Optional.of(qf);
+            }
+        }
+
+        // Recusive Case: Iterate over each subformula
+        for (Formula subF : f.getArgs()) {
+            Optional<Quantifier> subResult = findQuantifier(v, subF);
+            if (subResult.isPresent()) {
+                return subResult;
+            }
+        }
+
+        // Quantifier not found at this depth
+        return Optional.empty();
+    }
+
+    /**
+     * Helper function, recursively checks subformulas and keeps
+     * track of whether we're in a modal context using the argument
+     * withinModalContext
+     */
+    private static boolean varWithinModalContext(Variable v, Formula f, boolean withinModalContext) {
+        // Base Case 1
+        if (f instanceof Atom) {
+            return false;
+        }
+
+        // Base Case 2
+        if (f instanceof Predicate) {
+            Predicate pf = (Predicate) f;
+            if (pf.variablesPresent().contains(v)) {
+                return withinModalContext;
+            }
+            // Variable wasn't in this branch
+            return false;
+        }
+
+
+        // Recusive Case: Iterate over each subformula
+        for (Formula subF : f.getArgs()) {
+            boolean subIsModal = withinModalContext || (subF instanceof UnaryModalFormula);
+            if (varWithinModalContext(v, subF, subIsModal)) {
+                return true;
+            }
+        }
+
+        // Not within modal context at this layer
+        return false;
+    }
+
+    /**
+     * Returns whether or not a variable exists within a modal context of
+     * a given formula.
+     * @param v variable to check for
+     * @param f formula to check within
+     * @return a boolean representing the result
+     */
+    private static boolean varWithinModalContext(Variable v, Formula f) {
+        return varWithinModalContext(v, f, f instanceof UnaryModalFormula);
+    }
+
+    private boolean violatesModalConstraint(Variable v, Formula f) {
+        Optional<Quantifier> qfOpt = findQuantifier(v, f);
+        if (!qfOpt.isPresent()) {
+            return false;
+        }
+        Quantifier qf = qfOpt.get();
+        // Fail if we're trying to find a variable within a modal context
+        return varWithinModalContext(v, qf.getArgument());
+    }
+
+
+    /** Attempt to prove the goal from an agent's theory of mind. 
+     * @param base Set of formulas that represent the background theory.
+     * @param goal Statement to prove
+     * @return Justification if proof is found, otherwise empty.
+    */
+    private Optional<Pair<Justification, Set<Map<Variable, Value>>>> proveAgentClosureBindings(Set<Formula> base, Formula goal, List<Variable> variables) {
+        // Return empty if not a theory of mind formula
+        if (! (goal instanceof UnaryModalFormula)) {
+            return Optional.empty();
+        }
+
+        UnaryModalFormula formula = (UnaryModalFormula) goal;
+        Value    agent            = formula.getAgent();
+        Value    time             = formula.getTime();
+        Formula  innerGoalFormula = formula.getFormula();
+
+        AgentSnapShot agentSnapShot = AgentSnapShot.from(base);
+
+        Set<Formula> innerGivens = Sets.newSet();
+
+
+        // Gather formula from base based on modal formula
+        // from time 0 to time.
+
+        if(formula instanceof Knowledge){
+            innerGivens = agentSnapShot.allKnownByAgentTillTime(agent, time);
+        }
+
+        if(formula instanceof Belief){
+            innerGivens = agentSnapShot.allBelievedByAgentTillTime(agent, time);
+        }
+
+        if(formula instanceof Intends){
+            innerGivens = agentSnapShot.allIntendedByAgentTillTime(agent, time);
+        }
+
+        // Attempt to prove the goal from the gathered formulae
+        CognitiveCalculusProver cognitiveCalculusProver = new CognitiveCalculusProver(this);
+        Optional<Pair<Justification, Set<Map<Variable, Value>>>>  inner                   = cognitiveCalculusProver.proveAndGetMultipleBindings(innerGivens, innerGoalFormula, variables);
+
+        return inner;
+        // return inner.map(justification -> new CompoundJustification(
+            // formula.getClass().toString(),
+            // CollectionUtils.listOf(justification))
+        // );
+
+    }
+
+
+    public Optional<Pair<Justification, Set<Map<Variable, Value>>>> proveAndGetMultipleBindings(Set<Formula> assumptions, Formula formula, List<Variable> variables) {
+
+        // Make sure we're not trying to provide substitions within modal contexts
+        for (Variable v : variables) {
+
+            // Check for each background formula
+            for (Formula f : assumptions) {
+                if (violatesModalConstraint(v, f)) {
+                    System.out.println("[WARNING] Variable violates modal constraint");
+                    return Optional.empty();
+                } 
+            }
+
+            // Check goal formula
+            if (violatesModalConstraint(v, formula)) {
+                System.out.println("[WARNING] Variable violates modal constraint");
+                return Optional.empty();
+            }
+        }
+
+        System.out.println("Trying to prove " + formula.toString());
+
+        Set<Formula> base = CollectionUtils.setFrom(assumptions);
+        Formula shadowedGoal = formula.shadow(1);
+
+        Prover folProver = SnarkWrapper.getInstance();
+        Optional<Pair<Justification, Set<Map<Variable, Value>>>> shadowedJustificationOpt = folProver.proveAndGetMultipleBindings(shadow(base), shadowedGoal, variables);
+        if (shadowedJustificationOpt.isPresent()) {
+            return shadowedJustificationOpt;
+        }
+
+        Optional<Pair<Justification, Set<Map<Variable, Value>>>> agentClosureJustificationOpt = this.proveAgentClosureBindings(base, formula, variables);
+        if (agentClosureJustificationOpt.isPresent()) {
+            return agentClosureJustificationOpt;
+        }
+
+        // Proof Search Failed
+        return Optional.empty();
+    }
 }
