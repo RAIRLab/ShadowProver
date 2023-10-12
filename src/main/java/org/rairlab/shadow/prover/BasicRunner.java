@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 /** The class containing the main method and the primary entrypoint of the ShadowProver application */
-public final class Runner {
+public final class BasicRunner {
 
     /** The entrypoint to ShadowProver 
      * @param args an array containing a single string with the path to the problem file

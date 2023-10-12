@@ -46,40 +46,20 @@
 
                 <!-- Aditional Executable Jars with real manifests that we're building -->
                 <executions>
-                    <!-- DEADCODE maybe, sandbox does not appear to differ in anyway from server -->
-                    <execution>
-                        <id>sandbox</id>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <mainClass>org.rairlab.shadow.prover.Py4JServer</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>sandbox</finalName>
-                        </configuration>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-
                     <!-- The Py4j server executable -->
                     <execution>
-                        <id>server</id>
+                        <id>basic-runner</id>
                         <configuration>
                             <archive>
                                 <manifest>
                                     <addClasspath>true</addClasspath>
-                                    <mainClass>org.rairlab.shadow.prover.Py4JServer</mainClass>
+                                    <mainClass>org.rairlab.shadow.prover.BasicRunner</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
-                            <finalName>server</finalName>
+                            <finalName>basic-runner</finalName>
                         </configuration>
                         <phase>package</phase>
                         <goals>

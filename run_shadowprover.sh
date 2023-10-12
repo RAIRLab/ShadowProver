@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 
 show_usage() {
-    echo "Usage: ./run_shadowprover.sh [FILENAME]"
+    echo "Usage: ./run_shadowprover.sh [problem_file_path]"
     exit 1
 }
 
@@ -18,4 +18,4 @@ if ! command -v mvn > /dev/null; then
     exit 1
 fi
 
-mvn -q exec:java -Dexec.mainClass="org.rairlab.shadow.prover.Runner" -Dexec.args="$1"
+mvn -q exec:java -Dexec.mainClass="org.rairlab.shadow.prover.BasicRunner" -Dexec.args="$1"

@@ -1,4 +1,0 @@
-Comment: DEADCODE this Manifest is never used, the directory should be discarded
-Manifest-Version: 1.0
-Main-Class: org.rairlab.shadow.prover.examples.VirtueLearning
-

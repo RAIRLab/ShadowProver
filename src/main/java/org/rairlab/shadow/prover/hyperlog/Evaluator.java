@@ -93,8 +93,5 @@ public class Evaluator {
         PersistentArrayMap result =  (PersistentArrayMap) eval_script.invoke(program.toString(), allowedOps);
 
         return result.get(RESULT);
-
-
-
     }
 }
