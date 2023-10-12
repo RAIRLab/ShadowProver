@@ -9,12 +9,17 @@ import org.rairlab.shadow.prover.utils.CollectionUtils;
 import org.rairlab.shadow.prover.utils.Reader;
 import org.rairlab.shadow.prover.utils.Sets;
 
+import clojure.lang.IFn.L;
+
 import org.apache.commons.lang3.tuple.Pair;
 
+import org.armedbear.lisp.Stream;
 import org.armedbear.lisp.Fixnum;
+import org.armedbear.lisp.Symbol;
 import org.armedbear.lisp.Interpreter;
 import org.armedbear.lisp.LispObject;
 
+import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -27,6 +32,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
+
 
 /**
  * Created by naveensundarg on 12/4/16.
@@ -46,14 +52,32 @@ public class SnarkWrapper implements Prover {
         return INSTANCE;
     }
 
+    /**
+     * Loads a path inside a jar file.
+     * @return A LispObject containing the result of trying to load the path
+     */
+    private static LispObject loadStream(String path) {
+        LispObject loadFunc = Symbol.LOAD.getSymbolFunction();
+        ClassLoader classLoader = SnarkWrapper.class.getClassLoader();
+        InputStream fileStream = classLoader.getResourceAsStream(path);
+        Stream S = new Stream(Symbol.SYSTEM_STREAM, fileStream, Symbol.CHARACTER);
+        return loadFunc.execute(S);
+    }
+
     static {
         if (local.get()) {
             // Load Snark into the LISP Interpreter
+        
             interpreter = Interpreter.createInstance();
-            LispObject result = interpreter.eval("(load \"snark/snark-system.lisp\")");
+            LispObject result = loadStream("snark/snark-system.lisp");
             result = interpreter.eval("(make-snark-system)");
-            result = interpreter.eval("(load \"snark/snark-interface.lisp\")");
-            result = interpreter.eval("(load \"snark/commons.lisp\")");
+            result = loadStream("snark/snark-interface.lisp");
+            result = loadStream("snark/commons.lisp");
+
+            // LispObject result = interpreter.eval("(load \"snark/snark-system.lisp\")");
+            // result = interpreter.eval("(make-snark-system)");
+            // result = interpreter.eval("(load \"snark/snark-interface.lisp\")");
+            // result = interpreter.eval("(load \"snark/commons.lisp\")");
         } else {
             interpreter = null;
         }
