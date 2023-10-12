@@ -1,13 +1,13 @@
-package com.naveensundarg.shadow.prover.core.internals;
+package org.rairlab.shadow.prover.core.internals;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.representations.formula.Belief;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Intends;
-import com.naveensundarg.shadow.prover.representations.formula.Knowledge;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.representations.formula.Belief;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Intends;
+import org.rairlab.shadow.prover.representations.formula.Knowledge;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
 
 import java.util.Map;
 import java.util.Set;

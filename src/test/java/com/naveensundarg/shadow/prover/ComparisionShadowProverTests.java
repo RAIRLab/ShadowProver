@@ -1,14 +1,14 @@
-package com.naveensundarg.shadow.prover;
+package org.rairlab.shadow.prover;
 
-import com.naveensundarg.shadow.prover.core.ccprovers.CognitiveCalculusProver;
-import com.naveensundarg.shadow.prover.utils.Problem;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.representations.cnf.Clause;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.sandboxes.Sandbox;
-import com.naveensundarg.shadow.prover.utils.Pair;
-import com.naveensundarg.shadow.prover.utils.ProblemReader;
-import com.naveensundarg.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.core.ccprovers.CognitiveCalculusProver;
+import org.rairlab.shadow.prover.utils.Problem;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.representations.cnf.Clause;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.sandboxes.Sandbox;
+import org.rairlab.shadow.prover.utils.Pair;
+import org.rairlab.shadow.prover.utils.ProblemReader;
+import org.rairlab.shadow.prover.utils.Reader;
 import junit.framework.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

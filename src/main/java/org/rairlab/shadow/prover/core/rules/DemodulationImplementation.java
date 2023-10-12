@@ -1,12 +1,12 @@
-package com.naveensundarg.shadow.prover.core.rules;
+package org.rairlab.shadow.prover.core.rules;
 
-import com.naveensundarg.shadow.prover.core.proof.Unifier;
-import com.naveensundarg.shadow.prover.representations.cnf.Clause;
-import com.naveensundarg.shadow.prover.representations.cnf.Literal;
-import com.naveensundarg.shadow.prover.representations.formula.Predicate;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.proof.Unifier;
+import org.rairlab.shadow.prover.representations.cnf.Clause;
+import org.rairlab.shadow.prover.representations.cnf.Literal;
+import org.rairlab.shadow.prover.representations.formula.Predicate;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.naveensundarg.shadow.prover.utils.Sets.newSet;
+import static org.rairlab.shadow.prover.utils.Sets.newSet;
 
 /**
  * Created by naveensundarg on 4/15/16.

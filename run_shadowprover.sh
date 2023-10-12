@@ -18,4 +18,4 @@ if ! command -v mvn > /dev/null; then
     exit 1
 fi
 
-mvn -q exec:java -Dexec.mainClass="com.naveensundarg.shadow.prover.Runner" -Dexec.args="$1"
+mvn -q exec:java -Dexec.mainClass="org.rairlab.shadow.prover.Runner" -Dexec.args="$1"

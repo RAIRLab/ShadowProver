@@ -1,13 +1,13 @@
-package com.naveensundarg.shadow.prover.core.expanders.cognitivecalculus;
+package org.rairlab.shadow.prover.core.expanders.cognitivecalculus;
 
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.internals.Expander;
-import com.naveensundarg.shadow.prover.representations.formula.Belief;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Implication;
-import com.naveensundarg.shadow.prover.representations.formula.Knowledge;
-import com.naveensundarg.shadow.prover.utils.CommonUtils;
-import com.naveensundarg.shadow.prover.utils.Constants;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.internals.Expander;
+import org.rairlab.shadow.prover.representations.formula.Belief;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Implication;
+import org.rairlab.shadow.prover.representations.formula.Knowledge;
+import org.rairlab.shadow.prover.utils.CommonUtils;
+import org.rairlab.shadow.prover.utils.Constants;
 
 import java.util.Set;
 import java.util.stream.Collectors;

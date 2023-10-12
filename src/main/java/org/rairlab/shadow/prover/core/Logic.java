@@ -1,24 +1,24 @@
-package com.naveensundarg.shadow.prover.core;
+package org.rairlab.shadow.prover.core;
 
-import com.naveensundarg.shadow.prover.core.proof.HigherOrderUnification;
-import com.naveensundarg.shadow.prover.core.proof.Unifier;
-import com.naveensundarg.shadow.prover.representations.Expression;
-import com.naveensundarg.shadow.prover.representations.cnf.Clause;
-import com.naveensundarg.shadow.prover.representations.cnf.Literal;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.*;
+import org.rairlab.shadow.prover.core.proof.HigherOrderUnification;
+import org.rairlab.shadow.prover.core.proof.Unifier;
+import org.rairlab.shadow.prover.representations.Expression;
+import org.rairlab.shadow.prover.representations.cnf.Clause;
+import org.rairlab.shadow.prover.representations.cnf.Literal;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.*;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import static com.naveensundarg.shadow.prover.utils.CollectionUtils.newMap;
-import static com.naveensundarg.shadow.prover.utils.Reader.readFormulaFromString;
-import static com.naveensundarg.shadow.prover.utils.Sets.newSet;
+import static org.rairlab.shadow.prover.utils.CollectionUtils.newMap;
+import static org.rairlab.shadow.prover.utils.Reader.readFormulaFromString;
+import static org.rairlab.shadow.prover.utils.Sets.newSet;
 
 /**
  * Created by naveensundarg on 4/10/16.

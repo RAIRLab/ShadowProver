@@ -1,18 +1,18 @@
-package com.naveensundarg.shadow.prover.core;
+package org.rairlab.shadow.prover.core;
 
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.representations.cnf.CNFFormula;
-import com.naveensundarg.shadow.prover.representations.cnf.Clause;
-import com.naveensundarg.shadow.prover.representations.cnf.Literal;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.representations.cnf.CNFFormula;
+import org.rairlab.shadow.prover.representations.cnf.Clause;
+import org.rairlab.shadow.prover.representations.cnf.Literal;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.naveensundarg.shadow.prover.utils.CollectionUtils.newEmptyList;
-import static com.naveensundarg.shadow.prover.utils.Sets.cartesianProduct;
-import static com.naveensundarg.shadow.prover.utils.Sets.newSet;
+import static org.rairlab.shadow.prover.utils.CollectionUtils.newEmptyList;
+import static org.rairlab.shadow.prover.utils.Sets.cartesianProduct;
+import static org.rairlab.shadow.prover.utils.Sets.newSet;
 
 /**
  * Created by naveensundarg on 4/10/16.

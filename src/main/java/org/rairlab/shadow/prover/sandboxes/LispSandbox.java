@@ -1,10 +1,10 @@
-package com.naveensundarg.shadow.prover.sandboxes;
+package org.rairlab.shadow.prover.sandboxes;
 
-import com.naveensundarg.shadow.prover.core.internals.UniversalInstantiation;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Universal;
-import com.naveensundarg.shadow.prover.utils.CommonUtils;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.internals.UniversalInstantiation;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Universal;
+import org.rairlab.shadow.prover.utils.CommonUtils;
+import org.rairlab.shadow.prover.utils.Sets;
 import org.armedbear.lisp.*;
 
 import java.util.Set;

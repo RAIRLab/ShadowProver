@@ -1,15 +1,15 @@
-package com.naveensundarg.shadow.prover.core.expanders.inductivecalculus;
+package org.rairlab.shadow.prover.core.expanders.inductivecalculus;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.internals.Expander;
-import com.naveensundarg.shadow.prover.core.proof.Unifier;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.Constants;
-import com.naveensundarg.shadow.prover.utils.Reader;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.internals.Expander;
+import org.rairlab.shadow.prover.core.proof.Unifier;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.Constants;
+import org.rairlab.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.HashSet;
 import java.util.Map;

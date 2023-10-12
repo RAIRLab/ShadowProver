@@ -1,15 +1,15 @@
-package com.naveensundarg.shadow.prover.core.ccprovers;
+package org.rairlab.shadow.prover.core.ccprovers;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.representations.cnf.CNFFormula;
-import com.naveensundarg.shadow.prover.representations.cnf.Clause;
-import com.naveensundarg.shadow.prover.representations.cnf.Literal;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.*;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.representations.cnf.CNFFormula;
+import org.rairlab.shadow.prover.representations.cnf.Clause;
+import org.rairlab.shadow.prover.representations.cnf.Literal;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +17,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.naveensundarg.shadow.prover.utils.CollectionUtils.newEmptyList;
-import static com.naveensundarg.shadow.prover.utils.CollectionUtils.newMap;
-import static com.naveensundarg.shadow.prover.utils.Sets.cartesianProduct;
+import static org.rairlab.shadow.prover.utils.CollectionUtils.newEmptyList;
+import static org.rairlab.shadow.prover.utils.CollectionUtils.newMap;
+import static org.rairlab.shadow.prover.utils.Sets.cartesianProduct;
 
 /**
  * Created by naveensundarg on 4/12/16.

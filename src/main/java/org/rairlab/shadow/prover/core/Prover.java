@@ -1,11 +1,11 @@
-package com.naveensundarg.shadow.prover.core;
+package org.rairlab.shadow.prover.core;
 
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.core.sortsystem.SortSystem;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.Logger;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.core.sortsystem.SortSystem;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.Logger;
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.tuple.Pair;
 

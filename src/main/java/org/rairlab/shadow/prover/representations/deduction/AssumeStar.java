@@ -1,6 +1,6 @@
-package com.naveensundarg.shadow.prover.representations.deduction;
+package org.rairlab.shadow.prover.representations.deduction;
 
-import com.naveensundarg.shadow.prover.representations.Phrase;
+import org.rairlab.shadow.prover.representations.Phrase;
 
 import java.util.List;
 

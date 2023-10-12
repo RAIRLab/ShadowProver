@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.representations.value;
+package org.rairlab.shadow.prover.representations.value;
 
 /**
  * Created by naveensundarg on 11/24/16.

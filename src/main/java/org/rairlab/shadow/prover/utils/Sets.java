@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.naveensundarg.shadow.prover.utils.CollectionUtils.newEmptyList;
+import static org.rairlab.shadow.prover.utils.CollectionUtils.newEmptyList;
 
 /**
  * Created by naveensundarg on 4/8/16.

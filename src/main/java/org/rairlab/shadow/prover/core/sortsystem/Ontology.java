@@ -1,7 +1,7 @@
-package com.naveensundarg.shadow.prover.core.sortsystem;
+package org.rairlab.shadow.prover.core.sortsystem;
 
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Sets;
 import us.bpsm.edn.Symbol;
 
 import java.util.Map;

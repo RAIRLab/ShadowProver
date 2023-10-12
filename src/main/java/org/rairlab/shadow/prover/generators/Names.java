@@ -1,6 +1,6 @@
-package com.naveensundarg.shadow.prover.generators;
+package org.rairlab.shadow.prover.generators;
 
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
 
 import java.util.Map;
 

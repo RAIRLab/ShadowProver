@@ -1,13 +1,13 @@
-package com.naveensundarg.shadow.prover.hyperlog;
+package org.rairlab.shadow.prover.hyperlog;
 
 import clojure.java.api.Clojure;
 import clojure.lang.IFn;
 import clojure.lang.Keyword;
 import clojure.lang.PersistentArrayMap;
-import com.naveensundarg.shadow.prover.representations.Expression;
-import com.naveensundarg.shadow.prover.representations.formula.NamedLambda;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.representations.Expression;
+import org.rairlab.shadow.prover.representations.formula.NamedLambda;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.Arrays;
 import java.util.Set;

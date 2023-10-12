@@ -1,8 +1,8 @@
-package com.naveensundarg.shadow.prover.core.proof;
+package org.rairlab.shadow.prover.core.proof;
 
-import com.naveensundarg.shadow.prover.representations.formula.FormulaVariable;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.representations.formula.FormulaVariable;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
 
 import java.util.Collections;
 import java.util.Map;

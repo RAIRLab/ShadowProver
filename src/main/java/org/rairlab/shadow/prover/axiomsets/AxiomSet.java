@@ -1,8 +1,8 @@
-package com.naveensundarg.shadow.prover.axiomsets;
+package org.rairlab.shadow.prover.axiomsets;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Reader;
 import us.bpsm.edn.parser.Parseable;
 import us.bpsm.edn.parser.Parser;
 import us.bpsm.edn.parser.Parsers;

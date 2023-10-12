@@ -1,17 +1,17 @@
-package com.naveensundarg.shadow.prover.core.expanders.cognitivecalculus;
+package org.rairlab.shadow.prover.core.expanders.cognitivecalculus;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.internals.Expander;
-import com.naveensundarg.shadow.prover.core.proof.InferenceJustification;
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.representations.formula.Common;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Knowledge;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.CommonUtils;
-import com.naveensundarg.shadow.prover.utils.Constants;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.internals.Expander;
+import org.rairlab.shadow.prover.core.proof.InferenceJustification;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.representations.formula.Common;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Knowledge;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.CommonUtils;
+import org.rairlab.shadow.prover.utils.Constants;
 
 import java.util.List;
 import java.util.Set;

@@ -1,13 +1,13 @@
-package com.naveensundarg.shadow.prover.representations.formula;
+package org.rairlab.shadow.prover.representations.formula;
 
 import clojure.lang.Compiler;
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.Reader;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.Map;
 import java.util.Set;

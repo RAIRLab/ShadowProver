@@ -1,10 +1,10 @@
-package com.naveensundarg.shadow.prover;
+package org.rairlab.shadow.prover;
 
-import com.naveensundarg.shadow.prover.core.ccprovers.CognitiveCalculusProver;
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.utils.Problem;
-import com.naveensundarg.shadow.prover.utils.ProblemReader;
-import com.naveensundarg.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.core.ccprovers.CognitiveCalculusProver;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.utils.Problem;
+import org.rairlab.shadow.prover.utils.ProblemReader;
+import org.rairlab.shadow.prover.utils.Reader;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

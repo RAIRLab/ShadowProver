@@ -1,10 +1,10 @@
-package com.naveensundarg.shadow.prover.representations.cnf;
+package org.rairlab.shadow.prover.representations.cnf;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Not;
-import com.naveensundarg.shadow.prover.representations.formula.Predicate;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Not;
+import org.rairlab.shadow.prover.representations.formula.Predicate;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
 
 import java.util.Map;
 import java.util.Set;

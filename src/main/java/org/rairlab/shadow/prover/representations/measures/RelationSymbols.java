@@ -1,6 +1,6 @@
-package com.naveensundarg.shadow.prover.representations.measures;
+package org.rairlab.shadow.prover.representations.measures;
 
-import com.naveensundarg.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.formula.*;
 
 import java.util.Arrays;
 

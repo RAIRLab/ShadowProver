@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.core;
+package org.rairlab.shadow.prover.core;
 
 /**
  * Created by naveensundarg on 12/13/16.

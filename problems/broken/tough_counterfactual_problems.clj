@@ -1,4 +1,4 @@
-(ns com.naveensundarg.shadow.prover.core.ccprovers.tough-counterfactual-problems)
+(ns org.rairlab.shadow.prover.core.ccprovers.tough-counterfactual-problems)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

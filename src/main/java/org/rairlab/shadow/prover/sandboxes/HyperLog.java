@@ -1,10 +1,10 @@
-package com.naveensundarg.shadow.prover.sandboxes;
+package org.rairlab.shadow.prover.sandboxes;
 
-import com.naveensundarg.shadow.prover.hyperlog.Evaluator;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.NamedLambda;
-import com.naveensundarg.shadow.prover.utils.Reader;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.hyperlog.Evaluator;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.NamedLambda;
+import org.rairlab.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.utils.Sets;
 
 public class HyperLog {
 

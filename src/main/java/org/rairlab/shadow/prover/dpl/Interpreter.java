@@ -1,19 +1,19 @@
-package com.naveensundarg.shadow.prover.dpl;
+package org.rairlab.shadow.prover.dpl;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.representations.ErrorPhrase;
-import com.naveensundarg.shadow.prover.representations.Phrase;
-import com.naveensundarg.shadow.prover.representations.deduction.*;
-import com.naveensundarg.shadow.prover.representations.formula.And;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Implication;
-import com.naveensundarg.shadow.prover.representations.formula.Not;
-import com.naveensundarg.shadow.prover.representations.method.DerivedMethod;
-import com.naveensundarg.shadow.prover.representations.method.PrimitiveMethod;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.representations.ErrorPhrase;
+import org.rairlab.shadow.prover.representations.Phrase;
+import org.rairlab.shadow.prover.representations.deduction.*;
+import org.rairlab.shadow.prover.representations.formula.And;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Implication;
+import org.rairlab.shadow.prover.representations.formula.Not;
+import org.rairlab.shadow.prover.representations.method.DerivedMethod;
+import org.rairlab.shadow.prover.representations.method.PrimitiveMethod;
 
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.List;
 import java.util.Set;

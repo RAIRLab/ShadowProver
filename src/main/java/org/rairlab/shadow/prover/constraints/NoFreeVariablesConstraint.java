@@ -1,7 +1,7 @@
-package com.naveensundarg.shadow.prover.constraints;
+package org.rairlab.shadow.prover.constraints;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.Set;
 import java.util.stream.Collectors;

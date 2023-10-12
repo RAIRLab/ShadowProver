@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.core.proof;
+package org.rairlab.shadow.prover.core.proof;
 
 import java.util.List;
 

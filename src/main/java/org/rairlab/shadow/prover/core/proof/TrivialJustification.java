@@ -1,6 +1,6 @@
-package com.naveensundarg.shadow.prover.core.proof;
+package org.rairlab.shadow.prover.core.proof;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Formula;
 
 import java.util.Set;
 

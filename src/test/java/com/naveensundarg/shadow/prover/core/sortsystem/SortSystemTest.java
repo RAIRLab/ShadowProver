@@ -1,9 +1,9 @@
-package com.naveensundarg.shadow.prover.core.sortsystem;
+package org.rairlab.shadow.prover.core.sortsystem;
 
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.utils.Reader;
 import org.testng.annotations.Test;
 import us.bpsm.edn.parser.Parseable;
 import us.bpsm.edn.parser.Parser;

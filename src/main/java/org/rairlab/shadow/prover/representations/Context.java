@@ -2,9 +2,9 @@
 //DEADCODE literally not used anywhere, commented out and compiles fine
 
 /*
-package com.naveensundarg.shadow.prover.representations;
+package org.rairlab.shadow.prover.representations;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Formula;
 
 import java.util.Set;
 

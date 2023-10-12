@@ -1,7 +1,7 @@
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.value.Value;
 import us.bpsm.edn.parser.Parseable;
 import us.bpsm.edn.parser.Parser;
 import us.bpsm.edn.parser.Parsers;
@@ -13,8 +13,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static com.naveensundarg.shadow.prover.utils.Reader.extractForms;
-import static com.naveensundarg.shadow.prover.utils.Reader.readFormula;
+import static org.rairlab.shadow.prover.utils.Reader.extractForms;
+import static org.rairlab.shadow.prover.utils.Reader.readFormula;
 import static us.bpsm.edn.parser.Parsers.defaultConfiguration;
 
 /**

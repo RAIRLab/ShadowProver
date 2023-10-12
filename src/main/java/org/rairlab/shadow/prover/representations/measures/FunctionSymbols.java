@@ -1,10 +1,10 @@
-package com.naveensundarg.shadow.prover.representations.measures;
+package org.rairlab.shadow.prover.representations.measures;
 
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Time;
-import com.naveensundarg.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Time;
+import org.rairlab.shadow.prover.representations.value.Value;
 
 import java.util.Arrays;
 

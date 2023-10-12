@@ -1,13 +1,13 @@
-package com.naveensundarg.shadow.prover;
+package org.rairlab.shadow.prover;
 
-import com.naveensundarg.shadow.prover.utils.Problem;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.ccprovers.CognitiveCalculusProver;
-import com.naveensundarg.shadow.prover.representations.cnf.Clause;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.sandboxes.Sandbox;
-import com.naveensundarg.shadow.prover.utils.*;
+import org.rairlab.shadow.prover.utils.Problem;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.ccprovers.CognitiveCalculusProver;
+import org.rairlab.shadow.prover.representations.cnf.Clause;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.sandboxes.Sandbox;
+import org.rairlab.shadow.prover.utils.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

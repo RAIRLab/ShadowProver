@@ -1,6 +1,6 @@
-package com.naveensundarg.shadow.prover.core.rules;
+package org.rairlab.shadow.prover.core.rules;
 
-import com.naveensundarg.shadow.prover.representations.cnf.Clause;
+import org.rairlab.shadow.prover.representations.cnf.Clause;
 
 import java.util.Set;
 

@@ -1,8 +1,8 @@
-package com.naveensundarg.shadow.prover.core.ccprovers;
+package org.rairlab.shadow.prover.core.ccprovers;
 
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
 
 import java.util.Set;
 

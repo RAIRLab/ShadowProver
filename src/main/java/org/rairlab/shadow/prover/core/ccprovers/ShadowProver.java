@@ -1,18 +1,18 @@
-package com.naveensundarg.shadow.prover.core.ccprovers;
+package org.rairlab.shadow.prover.core.ccprovers;
 
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.SnarkWrapper;
-import com.naveensundarg.shadow.prover.core.internals.AgentSnapShot;
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.core.proof.TrivialJustification;
-import com.naveensundarg.shadow.prover.core.sortsystem.SortSystem;
-import com.naveensundarg.shadow.prover.representations.formula.Belief;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Intends;
-import com.naveensundarg.shadow.prover.representations.formula.Knowledge;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.SnarkWrapper;
+import org.rairlab.shadow.prover.core.internals.AgentSnapShot;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.core.proof.TrivialJustification;
+import org.rairlab.shadow.prover.core.sortsystem.SortSystem;
+import org.rairlab.shadow.prover.representations.formula.Belief;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Intends;
+import org.rairlab.shadow.prover.representations.formula.Knowledge;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.List;

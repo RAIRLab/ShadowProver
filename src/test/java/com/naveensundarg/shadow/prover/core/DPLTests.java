@@ -1,9 +1,9 @@
-package com.naveensundarg.shadow.prover.core;
+package org.rairlab.shadow.prover.core;
 
-import com.naveensundarg.shadow.prover.dpl.Interpreter;
-import com.naveensundarg.shadow.prover.representations.Phrase;
-import com.naveensundarg.shadow.prover.sandboxes.Sandbox;
-import com.naveensundarg.shadow.prover.utils.*;
+import org.rairlab.shadow.prover.dpl.Interpreter;
+import org.rairlab.shadow.prover.representations.Phrase;
+import org.rairlab.shadow.prover.sandboxes.Sandbox;
+import org.rairlab.shadow.prover.utils.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

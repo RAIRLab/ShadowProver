@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.representations;
+package org.rairlab.shadow.prover.representations;
 
 /** REWRITE needs better explanation.
  * A Class representing an error when processing with Phrases

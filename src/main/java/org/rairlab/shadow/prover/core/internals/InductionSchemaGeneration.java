@@ -1,12 +1,12 @@
-package com.naveensundarg.shadow.prover.core.internals;
+package org.rairlab.shadow.prover.core.internals;
 
-import com.naveensundarg.shadow.prover.representations.formula.And;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Implication;
-import com.naveensundarg.shadow.prover.representations.formula.Universal;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.representations.formula.And;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Implication;
+import org.rairlab.shadow.prover.representations.formula.Universal;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.Comparator;
 import java.util.List;

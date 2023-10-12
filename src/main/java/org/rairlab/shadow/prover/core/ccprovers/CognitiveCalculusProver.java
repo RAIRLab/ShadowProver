@@ -1,21 +1,21 @@
-package com.naveensundarg.shadow.prover.core.ccprovers;
+package org.rairlab.shadow.prover.core.ccprovers;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.SnarkWrapper;
-import com.naveensundarg.shadow.prover.core.expanders.cognitivecalculus.*;
-import com.naveensundarg.shadow.prover.core.internals.AgentSnapShot;
-import com.naveensundarg.shadow.prover.core.internals.ConsistentSubsetFinder;
-import com.naveensundarg.shadow.prover.core.internals.Expander;
-import com.naveensundarg.shadow.prover.core.proof.AtomicJustification;
-import com.naveensundarg.shadow.prover.core.proof.CompoundJustification;
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.core.proof.TrivialJustification;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.*;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.SnarkWrapper;
+import org.rairlab.shadow.prover.core.expanders.cognitivecalculus.*;
+import org.rairlab.shadow.prover.core.internals.AgentSnapShot;
+import org.rairlab.shadow.prover.core.internals.ConsistentSubsetFinder;
+import org.rairlab.shadow.prover.core.internals.Expander;
+import org.rairlab.shadow.prover.core.proof.AtomicJustification;
+import org.rairlab.shadow.prover.core.proof.CompoundJustification;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.core.proof.TrivialJustification;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.*;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.hamcrest.core.IsInstanceOf;
@@ -223,7 +223,7 @@ public class CognitiveCalculusProver implements CCProver {
         return Optional.empty();
     }
 
-    /** Try to prove the consequent of an implication from the antecedant and base,
+    /** Try to prove the consequent of an implication from the antecedent and base,
      * if successful return If Intro justification.
      * @param base Set of derived formulae 
      * @param formula Goal to prove

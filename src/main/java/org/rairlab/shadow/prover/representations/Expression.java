@@ -1,7 +1,7 @@
-package com.naveensundarg.shadow.prover.representations;
+package org.rairlab.shadow.prover.representations;
 
-/** Abstract Base class for Formulae ({@link com.naveensundarg.shadow.prover.representations.formula.Formula})
- *  and Objects ({@link com.naveensundarg.shadow.prover.representations.value.Value})
+/** Abstract Base class for Formulae ({@link org.rairlab.shadow.prover.representations.formula.Formula})
+ *  and Objects ({@link org.rairlab.shadow.prover.representations.value.Value})
  * @author naveensundarg 
  * @date 8/27/17
  */

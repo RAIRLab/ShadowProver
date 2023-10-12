@@ -1,10 +1,10 @@
-package com.naveensundarg.shadow.prover.generators;
+package org.rairlab.shadow.prover.generators;
 
-import com.naveensundarg.shadow.prover.representations.formula.Atom;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Not;
-import com.naveensundarg.shadow.prover.representations.formula.Or;
-import com.naveensundarg.shadow.prover.utils.Pair;
+import org.rairlab.shadow.prover.representations.formula.Atom;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Not;
+import org.rairlab.shadow.prover.representations.formula.Or;
+import org.rairlab.shadow.prover.utils.Pair;
 
 import java.io.IOException;
 import java.nio.file.Files;

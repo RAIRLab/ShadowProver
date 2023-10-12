@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
 import java.util.function.Function;
 

@@ -1,8 +1,8 @@
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.representations.formula.Quantifier;
-import com.naveensundarg.shadow.prover.representations.formula.Universal;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.representations.formula.Quantifier;
+import org.rairlab.shadow.prover.representations.formula.Universal;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

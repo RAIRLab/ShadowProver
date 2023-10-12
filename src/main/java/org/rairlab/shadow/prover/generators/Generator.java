@@ -1,9 +1,9 @@
-package com.naveensundarg.shadow.prover.generators;
+package org.rairlab.shadow.prover.generators;
 
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.utils.Pair;
-import com.naveensundarg.shadow.prover.utils.Problem;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.utils.Pair;
+import org.rairlab.shadow.prover.utils.Problem;
 
 import java.util.List;
 import java.util.Set;

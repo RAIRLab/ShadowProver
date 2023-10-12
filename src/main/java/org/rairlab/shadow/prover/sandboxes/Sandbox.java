@@ -1,18 +1,18 @@
-package com.naveensundarg.shadow.prover.sandboxes;
+package org.rairlab.shadow.prover.sandboxes;
 
 import com.diogonunes.jcdp.color.ColoredPrinter;
 import com.diogonunes.jcdp.color.api.Ansi;
-import com.naveensundarg.shadow.prover.core.*;
-import com.naveensundarg.shadow.prover.core.ccprovers.*;
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.core.proof.Unifier;
-import com.naveensundarg.shadow.prover.core.propositionalmodalprovers.LP;
-import com.naveensundarg.shadow.prover.core.propositionalmodalprovers.LP1;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.measures.QuantifierRank;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.*;
+import org.rairlab.shadow.prover.core.*;
+import org.rairlab.shadow.prover.core.ccprovers.*;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.core.proof.Unifier;
+import org.rairlab.shadow.prover.core.propositionalmodalprovers.LP;
+import org.rairlab.shadow.prover.core.propositionalmodalprovers.LP1;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.measures.QuantifierRank;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.*;
 
 import java.io.FileInputStream;
 import java.util.*;

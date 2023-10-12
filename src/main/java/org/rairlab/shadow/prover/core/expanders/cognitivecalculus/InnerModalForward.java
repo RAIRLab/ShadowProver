@@ -1,14 +1,14 @@
-package com.naveensundarg.shadow.prover.core.expanders.cognitivecalculus;
+package org.rairlab.shadow.prover.core.expanders.cognitivecalculus;
 
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.ccprovers.CognitiveCalculusProver;
-import com.naveensundarg.shadow.prover.core.internals.AgentSnapShot;
-import com.naveensundarg.shadow.prover.core.internals.Expander;
-import com.naveensundarg.shadow.prover.representations.formula.Belief;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.UnaryModalFormula;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.ccprovers.CognitiveCalculusProver;
+import org.rairlab.shadow.prover.core.internals.AgentSnapShot;
+import org.rairlab.shadow.prover.core.internals.Expander;
+import org.rairlab.shadow.prover.representations.formula.Belief;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.UnaryModalFormula;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.HashSet;
 import java.util.Set;

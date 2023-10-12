@@ -1,7 +1,7 @@
-package com.naveensundarg.shadow.prover.representations.value;
+package org.rairlab.shadow.prover.representations.value;
 
-import com.naveensundarg.shadow.prover.utils.Pair;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.utils.Pair;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.*;
 

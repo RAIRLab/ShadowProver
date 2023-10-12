@@ -1,13 +1,13 @@
 
 //DEADCODE this class and its methods are never used anywhere in the project
 
-package com.naveensundarg.shadow.prover;
+package org.rairlab.shadow.prover;
 
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.SnarkWrapper;
-import com.naveensundarg.shadow.prover.utils.Problem;
-import com.naveensundarg.shadow.prover.utils.ProblemReader;
-import com.naveensundarg.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.SnarkWrapper;
+import org.rairlab.shadow.prover.utils.Problem;
+import org.rairlab.shadow.prover.utils.ProblemReader;
+import org.rairlab.shadow.prover.utils.Reader;
 
 import java.util.List;
 

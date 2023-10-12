@@ -1,5 +1,5 @@
 
-package com.naveensundarg.shadow.prover.representations;
+package org.rairlab.shadow.prover.representations;
 
 //DEADCODE not used anywhere, this is the only search result, commented out as proof
 

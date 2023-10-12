@@ -1,18 +1,18 @@
-package com.naveensundarg.shadow.prover.representations.value;
+package org.rairlab.shadow.prover.representations.value;
 
-import com.naveensundarg.shadow.prover.core.proof.Unifier;
-import com.naveensundarg.shadow.prover.representations.Expression;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Pair;
+import org.rairlab.shadow.prover.core.proof.Unifier;
+import org.rairlab.shadow.prover.representations.Expression;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Pair;
 
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
 /** Abstract Base class for "objects" in the universe of discourse such as constants as 
- * {@link com.naveensundarg.shadow.prover.representations.value.Constant}, 
- * functions (and sets?) as {@link com.naveensundarg.shadow.prover.representations.value.Compound},
- * and variables over objects as {@link com.naveensundarg.shadow.prover.representations.value.Variable}
+ * {@link org.rairlab.shadow.prover.representations.value.Constant}, 
+ * functions (and sets?) as {@link org.rairlab.shadow.prover.representations.value.Compound},
+ * and variables over objects as {@link org.rairlab.shadow.prover.representations.value.Variable}
  * @author naveensundarg
  * @date 4/11/16
  */

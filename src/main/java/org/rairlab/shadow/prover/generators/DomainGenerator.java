@@ -1,8 +1,8 @@
-package com.naveensundarg.shadow.prover.generators;
+package org.rairlab.shadow.prover.generators;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Reader;
 
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;

@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.representations.sorts;
+package org.rairlab.shadow.prover.representations.sorts;
 
 /**
  * Created by naveensundarg on 7/21/16.

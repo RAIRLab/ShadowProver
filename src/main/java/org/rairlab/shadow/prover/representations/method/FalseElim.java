@@ -1,9 +1,9 @@
-package com.naveensundarg.shadow.prover.representations.method;
+package org.rairlab.shadow.prover.representations.method;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.representations.ErrorPhrase;
-import com.naveensundarg.shadow.prover.representations.Phrase;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.representations.ErrorPhrase;
+import org.rairlab.shadow.prover.representations.Phrase;
+import org.rairlab.shadow.prover.representations.formula.Formula;
 
 import java.util.List;
 import java.util.Set;

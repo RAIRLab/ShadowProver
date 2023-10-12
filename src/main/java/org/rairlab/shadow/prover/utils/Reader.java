@@ -1,13 +1,13 @@
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
-import com.naveensundarg.shadow.prover.representations.Phrase;
-import com.naveensundarg.shadow.prover.representations.deduction.*;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.method.*;
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.representations.Phrase;
+import org.rairlab.shadow.prover.representations.deduction.*;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.method.*;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
 import us.bpsm.edn.Symbol;
 import us.bpsm.edn.parser.Parseable;
 import us.bpsm.edn.parser.Parser;

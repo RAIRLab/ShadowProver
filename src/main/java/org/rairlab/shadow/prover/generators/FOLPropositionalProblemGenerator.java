@@ -1,16 +1,16 @@
-package com.naveensundarg.shadow.prover.generators;
+package org.rairlab.shadow.prover.generators;
 
 
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.SnarkWrapper;
-import com.naveensundarg.shadow.prover.core.proof.AtomicJustification;
-import com.naveensundarg.shadow.prover.core.proof.CompoundJustification;
-import com.naveensundarg.shadow.prover.representations.formula.*;
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.*;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.SnarkWrapper;
+import org.rairlab.shadow.prover.core.proof.AtomicJustification;
+import org.rairlab.shadow.prover.core.proof.CompoundJustification;
+import org.rairlab.shadow.prover.representations.formula.*;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.*;
 
 import javax.swing.text.html.Option;
 import java.util.*;

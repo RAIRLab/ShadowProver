@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.core.sortsystem;
+package org.rairlab.shadow.prover.core.sortsystem;
 
 /**
  * Created by naveensundarg on 8/27/16.

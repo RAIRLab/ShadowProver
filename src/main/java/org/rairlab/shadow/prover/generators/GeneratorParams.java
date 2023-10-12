@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.generators;
+package org.rairlab.shadow.prover.generators;
 
 public  class GeneratorParams {
 

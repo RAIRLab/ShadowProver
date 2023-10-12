@@ -1,6 +1,6 @@
-package com.naveensundarg.shadow.prover.examples;
+package org.rairlab.shadow.prover.examples;
 
-import com.naveensundarg.shadow.prover.core.ccprovers.CognitiveCalculusProver;
+import org.rairlab.shadow.prover.core.ccprovers.CognitiveCalculusProver;
 
 public class TAI_AEGAP {
 

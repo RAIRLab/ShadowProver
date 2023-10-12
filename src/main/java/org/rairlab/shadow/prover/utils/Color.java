@@ -1,13 +1,13 @@
 
 //DEADCODE not used by anything, commented out
 
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
-import com.naveensundarg.shadow.prover.core.ccprovers.ColoredConverter;
-import com.naveensundarg.shadow.prover.representations.cnf.Literal;
-import com.naveensundarg.shadow.prover.representations.formula.Predicate;
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.core.ccprovers.ColoredConverter;
+import org.rairlab.shadow.prover.representations.cnf.Literal;
+import org.rairlab.shadow.prover.representations.formula.Predicate;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Value;
 
 import java.util.Arrays;
 import java.util.List;

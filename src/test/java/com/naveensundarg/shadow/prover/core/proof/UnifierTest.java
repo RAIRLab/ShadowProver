@@ -1,10 +1,10 @@
-package com.naveensundarg.shadow.prover.core.proof;
+package org.rairlab.shadow.prover.core.proof;
 
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.Pair;
-import com.naveensundarg.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.Pair;
+import org.rairlab.shadow.prover.utils.Reader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,8 +14,8 @@ import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-import static com.naveensundarg.shadow.prover.utils.Reader.readFormulaFromString;
-import static com.naveensundarg.shadow.prover.utils.Reader.readLogicValueFromString;
+import static org.rairlab.shadow.prover.utils.Reader.readFormulaFromString;
+import static org.rairlab.shadow.prover.utils.Reader.readLogicValueFromString;
 import static org.testng.Assert.*;
 
 /**

@@ -1,9 +1,9 @@
-package com.naveensundarg.shadow.prover.representations.formula;
+package org.rairlab.shadow.prover.representations.formula;
 
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.CommonUtils;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.CommonUtils;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.util.Arrays;
 import java.util.List;

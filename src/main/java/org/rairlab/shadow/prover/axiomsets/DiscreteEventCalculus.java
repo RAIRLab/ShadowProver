@@ -1,8 +1,8 @@
-package com.naveensundarg.shadow.prover.axiomsets;
+package org.rairlab.shadow.prover.axiomsets;
 
-import com.naveensundarg.shadow.prover.constraints.NoFreeVariablesConstraint;
-import com.naveensundarg.shadow.prover.constraints.Signature;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.constraints.NoFreeVariablesConstraint;
+import org.rairlab.shadow.prover.constraints.Signature;
+import org.rairlab.shadow.prover.representations.formula.Formula;
 
 import java.util.Set;
 

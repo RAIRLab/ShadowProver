@@ -1,27 +1,27 @@
-package com.naveensundarg.shadow.prover.core.propositionalmodalprovers;
+package org.rairlab.shadow.prover.core.propositionalmodalprovers;
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.ccprovers.ModalConverter;
-import com.naveensundarg.shadow.prover.core.proof.Justification;
-import com.naveensundarg.shadow.prover.core.proof.TrivialJustification;
-import com.naveensundarg.shadow.prover.representations.cnf.PseudoLiteral;
-import com.naveensundarg.shadow.prover.representations.formula.And;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Or;
-import com.naveensundarg.shadow.prover.representations.formula.Possibility;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Problem;
-import com.naveensundarg.shadow.prover.utils.Reader;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.ccprovers.ModalConverter;
+import org.rairlab.shadow.prover.core.proof.Justification;
+import org.rairlab.shadow.prover.core.proof.TrivialJustification;
+import org.rairlab.shadow.prover.representations.cnf.PseudoLiteral;
+import org.rairlab.shadow.prover.representations.formula.And;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Or;
+import org.rairlab.shadow.prover.representations.formula.Possibility;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Problem;
+import org.rairlab.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.utils.Sets;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.naveensundarg.shadow.prover.utils.CollectionUtils.newEmptyList;
-import static com.naveensundarg.shadow.prover.utils.Sets.cartesianProduct;
+import static org.rairlab.shadow.prover.utils.CollectionUtils.newEmptyList;
+import static org.rairlab.shadow.prover.utils.Sets.cartesianProduct;
 
 public abstract class LP implements Prover {
 

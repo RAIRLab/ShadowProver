@@ -1,14 +1,14 @@
-package com.naveensundarg.shadow.prover.sandboxes;
+package org.rairlab.shadow.prover.sandboxes;
 
-import com.naveensundarg.shadow.prover.dpl.Interpreter;
-import com.naveensundarg.shadow.prover.representations.Phrase;
-import com.naveensundarg.shadow.prover.representations.deduction.MethodApplication;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.method.Claim;
-import com.naveensundarg.shadow.prover.representations.method.ModusPonens;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Reader;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.dpl.Interpreter;
+import org.rairlab.shadow.prover.representations.Phrase;
+import org.rairlab.shadow.prover.representations.deduction.MethodApplication;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.method.Claim;
+import org.rairlab.shadow.prover.representations.method.ModusPonens;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.utils.Sets;
 
 import java.lang.reflect.Method;
 import java.util.Set;

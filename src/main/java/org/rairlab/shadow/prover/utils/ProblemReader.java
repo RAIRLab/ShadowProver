@@ -1,12 +1,12 @@
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
-import com.naveensundarg.shadow.prover.axiomsets.AxiomSet;
-import com.naveensundarg.shadow.prover.representations.Phrase;
-import com.naveensundarg.shadow.prover.sandboxes.Sandbox;
-//import com.naveensundarg.shadow.prover.core.sortsystem.SortSystem;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.axiomsets.AxiomSet;
+import org.rairlab.shadow.prover.representations.Phrase;
+import org.rairlab.shadow.prover.sandboxes.Sandbox;
+//import org.rairlab.shadow.prover.core.sortsystem.SortSystem;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
 import org.apache.commons.lang3.NotImplementedException;
 
 import us.bpsm.edn.Keyword;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 import static us.bpsm.edn.parser.Parsers.defaultConfiguration;
 
 /** Static class for converting edn problem files (See examples)  
- * into {@link com.naveensundarg.shadow.prover.utils.Problem} instances.
+ * into {@link org.rairlab.shadow.prover.utils.Problem} instances.
  * @author naveensundarg 
  * @date 7/23/16
  */
@@ -66,10 +66,10 @@ public class ProblemReader {
     }
 
     /**
-     * Takes a problem file and gives the list of {@link com.naveensundarg.shadow.prover.utils.Problem} objects
+     * Takes a problem file and gives the list of {@link org.rairlab.shadow.prover.utils.Problem} objects
      * it contains.
      * @param path An inputStream containing bytes that can be interpreted as valid problems.
-     * @return The list of all {@link com.naveensundarg.shadow.prover.utils.Problem} that were parsed from the file
+     * @return The list of all {@link org.rairlab.shadow.prover.utils.Problem} that were parsed from the file
      * @throws Reader.ParsingException If the file content is unable to be parsed (Bad formatting etc)
      * @throws FileNotFoundException If the file is not found.
      */

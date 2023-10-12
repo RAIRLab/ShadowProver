@@ -1,4 +1,4 @@
-package com.naveensundarg.shadow.prover.representations;
+package org.rairlab.shadow.prover.representations;
 
 import java.io.Serializable;
 

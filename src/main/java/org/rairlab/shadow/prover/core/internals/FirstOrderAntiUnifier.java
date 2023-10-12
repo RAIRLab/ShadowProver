@@ -1,11 +1,11 @@
-package com.naveensundarg.shadow.prover.core.internals;
+package org.rairlab.shadow.prover.core.internals;
 
-import com.naveensundarg.shadow.prover.representations.value.Compound;
-import com.naveensundarg.shadow.prover.representations.value.Constant;
-import com.naveensundarg.shadow.prover.representations.value.Value;
-import com.naveensundarg.shadow.prover.representations.value.Variable;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.CommonUtils;
+import org.rairlab.shadow.prover.representations.value.Compound;
+import org.rairlab.shadow.prover.representations.value.Constant;
+import org.rairlab.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Variable;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.CommonUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.naveensundarg.shadow.prover.utils.CollectionUtils.mapWith;
+import static org.rairlab.shadow.prover.utils.CollectionUtils.mapWith;
 
 
 public class FirstOrderAntiUnifier {

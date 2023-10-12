@@ -1,11 +1,11 @@
-package com.naveensundarg.shadow.prover.sandboxes;
+package org.rairlab.shadow.prover.sandboxes;
 
 
 import clojure.java.api.Clojure;
 import clojure.lang.IFn;
 import clojure.lang.Namespace;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.Sets;
 
 class ClojureSandbox{
 

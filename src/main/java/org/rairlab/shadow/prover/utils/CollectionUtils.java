@@ -1,6 +1,6 @@
-package com.naveensundarg.shadow.prover.utils;
+package org.rairlab.shadow.prover.utils;
 
-import com.naveensundarg.shadow.prover.representations.value.Value;
+import org.rairlab.shadow.prover.representations.value.Value;
 
 import java.util.*;
 import java.util.stream.Collectors;

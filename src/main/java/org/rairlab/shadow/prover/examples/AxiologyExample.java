@@ -1,14 +1,14 @@
-package com.naveensundarg.shadow.prover.examples;
+package org.rairlab.shadow.prover.examples;
 
 import com.diogonunes.jcdp.color.ColoredPrinter;
 import com.diogonunes.jcdp.color.api.Ansi;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.ccprovers.AxiologyProver;
-import com.naveensundarg.shadow.prover.core.ccprovers.SecondOrderCognitiveCalculusProver;
-import com.naveensundarg.shadow.prover.core.ccprovers.SecondOrderProver;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.utils.Reader;
-import com.naveensundarg.shadow.prover.utils.Sets;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.ccprovers.AxiologyProver;
+import org.rairlab.shadow.prover.core.ccprovers.SecondOrderCognitiveCalculusProver;
+import org.rairlab.shadow.prover.core.ccprovers.SecondOrderProver;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.utils.Reader;
+import org.rairlab.shadow.prover.utils.Sets;
 
 /**
  * Created by naveensundarg on 4/8/16.

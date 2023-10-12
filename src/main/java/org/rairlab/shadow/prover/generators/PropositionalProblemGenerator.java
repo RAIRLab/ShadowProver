@@ -1,17 +1,17 @@
-package com.naveensundarg.shadow.prover.generators;
+package org.rairlab.shadow.prover.generators;
 
 
-import com.naveensundarg.shadow.prover.core.Logic;
-import com.naveensundarg.shadow.prover.core.Prover;
-import com.naveensundarg.shadow.prover.core.SnarkWrapper;
-import com.naveensundarg.shadow.prover.representations.formula.Atom;
-import com.naveensundarg.shadow.prover.representations.formula.Formula;
-import com.naveensundarg.shadow.prover.representations.formula.Not;
-import com.naveensundarg.shadow.prover.representations.formula.Or;
-import com.naveensundarg.shadow.prover.utils.CollectionUtils;
-import com.naveensundarg.shadow.prover.utils.CommonUtils;
-import com.naveensundarg.shadow.prover.utils.ImmutablePair;
-import com.naveensundarg.shadow.prover.utils.Pair;
+import org.rairlab.shadow.prover.core.Logic;
+import org.rairlab.shadow.prover.core.Prover;
+import org.rairlab.shadow.prover.core.SnarkWrapper;
+import org.rairlab.shadow.prover.representations.formula.Atom;
+import org.rairlab.shadow.prover.representations.formula.Formula;
+import org.rairlab.shadow.prover.representations.formula.Not;
+import org.rairlab.shadow.prover.representations.formula.Or;
+import org.rairlab.shadow.prover.utils.CollectionUtils;
+import org.rairlab.shadow.prover.utils.CommonUtils;
+import org.rairlab.shadow.prover.utils.ImmutablePair;
+import org.rairlab.shadow.prover.utils.Pair;
 
 import java.util.HashSet;
 import java.util.List;
