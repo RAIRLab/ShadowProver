@@ -36,6 +36,12 @@ public class CognitiveCalculusProver implements CCProver {
     private final  List<Expander> expanders;
     private        Set<Formula>   prohibited;
 
+    private enum solutionType {
+        ENTAILMENT,
+        QA_SINGLE,
+        QA_MULTIPLE
+    };
+
     protected Logger logger;
 
     public CognitiveCalculusProver() {
@@ -854,7 +860,7 @@ public class CognitiveCalculusProver implements CCProver {
             }
         }
 
-        System.out.println("Trying to prove " + formula.toString());
+        // System.out.println("Trying to prove " + formula.toString());
 
         Set<Formula> base = CollectionUtils.setFrom(assumptions);
         Formula shadowedGoal = formula.shadow(1);
@@ -868,6 +874,34 @@ public class CognitiveCalculusProver implements CCProver {
         Optional<Pair<Justification, Set<Map<Variable, Value>>>> agentClosureJustificationOpt = this.proveAgentClosureBindings(base, formula, variables);
         if (agentClosureJustificationOpt.isPresent()) {
             return agentClosureJustificationOpt;
+        }
+
+        Set<Formula> added = new HashSet<Formula>();
+
+        // We're bound by this memory limit
+        while (base.size() < MAX_EXPAND_FACTOR * assumptions.size()) {
+            // Grow the formula base via expanders
+            int sizeBeforeExpansion = base.size();
+            base = expand(base, added, formula);
+            int sizeAfterExpansion = base.size();
+
+            // If no new formula were created via expanders, then fail
+            if (sizeAfterExpansion <= sizeBeforeExpansion) {
+                return Optional.empty();
+            }
+
+            // Attempt shadowing and proving the goal again
+            shadowedJustificationOpt = folProver.proveAndGetMultipleBindings(shadow(base), shadowedGoal, variables);
+            if (shadowedJustificationOpt.isPresent()) {
+                return shadowedJustificationOpt;
+            }
+
+            // Attempt agent closure again
+            agentClosureJustificationOpt = this.proveAgentClosureBindings(base, formula, variables);
+            if (agentClosureJustificationOpt.isPresent()) {
+                return agentClosureJustificationOpt;
+            }
+
         }
 
         // Proof Search Failed
