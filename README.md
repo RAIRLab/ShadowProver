@@ -24,13 +24,15 @@ mvn package
 ```
 
 ### Running
-To run shaowprover ensure the `/target` directory has been built to, and the snark submodule has been cloned. From here you may run the provided script in the project root to run ShadowProver on a problem file. Problem files and examples can be found in the `/problems/` directory, for basic examples see `/problems/tutorial`.
+To run shaowprover ensure the `/target` directory has been built to, and the snark submodule has been cloned. From here, if on linux or mac, you may run the provided script in the project root to run ShadowProver on a problem file. Problem files and examples can be found in the `/problems/` directory, for basic examples see `/problems/tutorial`.
 ```bash
 ./run_shadowprover.sh [problem_file_path]
 ```
-
+If on windows, you can invoke the executable directly via mvn (this is what the .sh file does for you).
+```bash
+mvn -q exec:java -Dexec.mainClass="org.rairlab.shadow.prover.Runner" -Dexec.args="[problem_file_path]"
+``` 
 Additionally a docker based python interface exists on Naveen's branch, which can be found [here](https://github.com/naveensundarg/prover).
-
 
 ### Under the Hood
 
